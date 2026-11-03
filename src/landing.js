@@ -6,9 +6,12 @@ const reduced = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce
 
 /* BlurText: words in spans, staggered 100 ms; hero starts at once, others when scrolled into view (threshold 0.1) */
 function blurText(el) {
+  const lines = el.dataset.lines ? el.dataset.lines.split("|") : null;
   const words = el.textContent.trim().split(/\s+/);
   el.setAttribute("aria-label", words.join(" "));
-  el.innerHTML = words.map((w, i) => `<span aria-hidden="true" style="--i:${i}">${w.replace(/&/g, "&amp;").replace(/</g, "&lt;")}</span>`).join(" ");
+  let n = 0;
+  const mk = (w) => `<span aria-hidden="true" style="--i:${n++}">${w.replace(/&/g, "&amp;").replace(/</g, "&lt;")}</span>`;
+  el.innerHTML = lines ? lines.map((l) => `<div class="bl">${l.split(/\s+/).map(mk).join(" ")}</div>`).join("") : words.map(mk).join(" ");
   el.classList.add("bt");
   if (!("IntersectionObserver" in window)) { el.classList.add("ready"); return; }
   el.classList.add("ready", "wait");
@@ -56,5 +59,6 @@ function init() {
   if (nav && landing && "IntersectionObserver" in window)
     new IntersectionObserver((es) => es.forEach((e) => nav.classList.toggle("away", !e.isIntersecting)), { threshold: 0.02 }).observe(landing);
 }
+window.HGLanding = { blurText, fadingVideo };
 document.readyState === "loading" ? document.addEventListener("DOMContentLoaded", init) : init();
 })();

@@ -85,3 +85,6 @@
 .caps .rv.wait{animation-play-state:paused}
 @media(prefers-reduced-motion:reduce){.rv,.bt.ready span{animation:none}.fvid{display:none}.lnav{transition:none}}
 .app-anchor{scroll-margin-top:0}
+
+.bt .bl{width:100%;display:flex;flex-wrap:wrap;justify-content:flex-start}
+.caps .bt{justify-content:flex-start}
