@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HydroGarden — Irrigation Water Advisor for Hotel Gardens</title>
+<meta name="description" content="Offline FAO-56 irrigation water model for hotel gardens: audit, schedule, rain and greywater balance, and a portfolio view over the Hotel Garden Water AI dataset.">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self'; base-uri 'none'; form-action 'none'">
+<link rel="stylesheet" href="src/styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="masthead">
+  <div class="mast-row">
+    <div class="brand">
+      <div class="brand-mark">
+        <svg width="21" height="25" viewBox="0 0 21 25" aria-hidden="true">
+          <path d="M10.5 1C10.5 1 1.5 11.2 1.5 16.2A9 9 0 0 0 19.5 16.2C19.5 11.2 10.5 1 10.5 1Z"
+                fill="none" stroke="#fff" stroke-width="1.7" stroke-linejoin="round"/>
+          <path d="M5.6 16.6a4.9 4.9 0 0 0 4.9 4.9" fill="none" stroke="#7FD6A0" stroke-width="1.7" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div>
+        <h1>HydroGarden</h1>
+        <div class="sub">Irrigation water advisor for hotel gardens</div>
+      </div>
+    </div>
+    <div class="mast-meta">
+      <span class="chip-live chip-warn">Modelled · not metered</span>
+      <div style="margin-top:7px">Site: <b id="siteName">—</b></div>
+      <div><b id="siteArea">—</b> m² under irrigation · <b id="siteZones">—</b> zones</div>
+    </div>
+  </div>
+
+  <nav class="tabs" role="tablist" aria-label="Application sections">
+    <button class="tab on" id="tab-dash"      data-view="dash"      role="tab" aria-selected="true"  aria-controls="view-dash">Dashboard</button>
+    <button class="tab"    id="tab-zones"     data-view="zones"     role="tab" aria-selected="false" aria-controls="view-zones" tabindex="-1">Garden Zones</button>
+    <button class="tab"    id="tab-portfolio" data-view="portfolio" role="tab" aria-selected="false" aria-controls="view-portfolio" tabindex="-1">Portfolio</button>
+    <button class="tab"    id="tab-audit"     data-view="audit"     role="tab" aria-selected="false" aria-controls="view-audit" tabindex="-1">Water Audit</button>
+    <button class="tab"    id="tab-schedule"  data-view="schedule"  role="tab" aria-selected="false" aria-controls="view-schedule" tabindex="-1">Irrigation Plan</button>
+    <button class="tab"    id="tab-sim"       data-view="sim"       role="tab" aria-selected="false" aria-controls="view-sim" tabindex="-1">Simulator</button>
+    <button class="tab"    id="tab-harvest"   data-view="harvest"   role="tab" aria-selected="false" aria-controls="view-harvest" tabindex="-1">Rain &amp; Greywater</button>
+    <button class="tab"    id="tab-method"    data-view="method"    role="tab" aria-selected="false" aria-controls="view-method" tabindex="-1">Methodology</button>
+    <button class="tab"    id="tab-limits"    data-view="limits"    role="tab" aria-selected="false" aria-controls="view-limits" tabindex="-1">Assumptions</button>
+  </nav>
+</header>
+
+<main class="wrap" id="main">
+
+  <!-- ============ DASHBOARD ============ -->
+  <section class="view on" id="view-dash" role="tabpanel" aria-labelledby="tab-dash">
+    <div class="view-head">
+      <div class="eyebrow">Annual model</div>
+      <h2>What the garden uses today, and what it could use</h2>
+      <p>Computed from the zones on the next tab with the FAO-56 crop water requirement method.
+         Change a zone and every figure recalculates.</p>
+    </div>
+
+    <div class="callout warn" style="margin-bottom:18px">
+      <h4>Read the saving as a range, not a point</h4>
+      <p style="margin:0" id="uncNote">—</p>
+    </div>
+
+    <div class="grid kpis">
+      <div class="card kpi clay">
+        <div class="lab">Current use (assumed)</div>
+        <div class="val" id="kBase">—<span class="unit">m³/yr</span></div>
+        <div class="foot" id="kBaseCost">—</div>
+      </div>
+      <div class="card kpi teal">
+        <div class="lab">After retrofit</div>
+        <div class="val" id="kOpt">—<span class="unit">m³/yr</span></div>
+        <div class="foot" id="kOptCost">—</div>
+      </div>
+      <div class="card kpi moss">
+        <div class="lab">Water saved</div>
+        <div class="val" id="kPct">—<span class="unit">%</span></div>
+        <div class="foot" id="kSaved">—</div>
+        <div class="band" id="kPctBand"></div>
+      </div>
+      <div class="card kpi ink">
+        <div class="lab">Payback (net of O&amp;M)</div>
+        <div class="val" id="kPay">—<span class="unit">yr</span></div>
+        <div class="foot" id="kCapex">—</div>
+        <div class="band" id="kPayBand"></div>
+      </div>
+    </div>
+
+    <div class="sec">
+      <h3 class="sec-title">Water use by zone — current practice vs. proposed</h3>
+      <div class="card pad">
+        <div class="bar-key">
+          <span><i class="k-base"></i>Current practice</span>
+          <span><i class="k-opt"></i>Proposed retrofit</span>
+        </div>
+        <div class="cmp" id="cmpBars"></div>
+      </div>
+    </div>
+
+    <div class="sec">
+      <h3 class="sec-title">Where the savings come from</h3>
+      <div class="card pad">
+        <p class="small muted" style="margin-bottom:14px">
+          Each measure is credited with its <b>average marginal saving over every order</b> the five
+          measures could be adopted in (Shapley attribution). Unlike a stacked waterfall the result does
+          not depend on which measure is listed first, and the five bars still sum exactly to the total.</p>
+        <div class="wf" id="wfList"></div>
+        <p class="small muted" style="margin:14px 0 0" id="wetNote"></p>
+      </div>
+    </div>
+
+    <div class="sec">
+      <h3 class="sec-title">Monthly demand and rainfall</h3>
+      <div class="card pad" id="monthChart"></div>
+    </div>
+  </section>
+
+  <!-- ============ ZONES ============ -->
+  <section class="view" id="view-zones" role="tabpanel" aria-labelledby="tab-zones">
+    <div class="view-head">
+      <div class="eyebrow">Site inventory</div>
+      <h2>Garden zones</h2>
+      <p>The zones below drive every other tab. Edit them, add your own, or load a hotel from the
+         Portfolio tab. Changes are kept in this browser.</p>
+    </div>
+
+    <div class="card pad" style="margin-bottom:18px">
+      <div class="ctl">
+        <div class="field"><label for="inTariff">Water tariff</label>
+          <input id="inTariff" type="number" min="1" max="500" step="1"><span class="hint">₹ per m³</span></div>
+        <div class="field"><label for="inRain">Annual rainfall</label>
+          <input id="inRain" type="number" min="50" max="6000" step="10"><span class="hint">mm/yr (scales the monthly normals)</span></div>
+        <div class="field"><label for="inET">Design peak ET₀</label>
+          <input id="inET" type="number" min="1" max="12" step="0.1"><span class="hint">mm/day, sizes the schedule</span></div>
+        <div class="field"><label for="inDays">Irrigation season</label>
+          <input id="inDays" type="number" min="30" max="365" step="5"><span class="hint">days per year</span></div>
+        <div class="field"><label for="inNative">Species conversion</label>
+          <select id="inNative">
+            <option value="0">None — keep current planting</option>
+            <option value="0.3">30% of beds to drought-tolerant</option>
+            <option value="0.5">50% of beds to drought-tolerant</option>
+          </select></div>
+      </div>
+    </div>
+
+    <div class="card pad" style="margin-bottom:18px">
+      <h3 class="sec-title" style="margin-top:0">Zone editor</h3>
+      <div class="edit-wrap">
+        <table class="editor" id="editor">
+          <thead><tr>
+            <th>Name</th><th>Planting</th><th>Plant library <span class="muted">(sets K<sub>c</sub>)</span></th><th>Area m²</th><th>Soil</th>
+            <th>Current method</th><th>Watering time</th><th class="c">Slope</th><th class="c">Sensor</th><th class="c">Rain ctrl</th><th>Proposed</th><th><span class="sr">Remove</span></th>
+          </tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <div class="btnrow" style="margin-top:12px">
+        <button class="btn" id="btnAddZone" type="button">Add zone</button>
+        <button class="btn ghost" id="btnExport" type="button">Export site (JSON)</button>
+        <label class="btn ghost" for="fileSite" style="cursor:pointer">Import site (JSON)</label>
+        <input class="sr" id="fileSite" type="file" accept="application/json,.json">
+        <button class="btn ghost" id="btnReset" type="button">Reset to demo site</button>
+      </div>
+      <p class="msg" id="editMsg" role="status"></p>
+    </div>
+
+    <div class="grid zgrid" id="zoneCards"></div>
+
+    <div class="sec">
+      <h3 class="sec-title">Site plan <span class="muted" style="font-weight:400;font-family:var(--sans);font-size:13px">— block area ∝ zone area, colour = how the zone is watered today</span></h3>
+      <div class="card pad"><div class="plan" id="planFig"></div></div>
+    </div>
+
+    <div class="sec">
+      <h3 class="sec-title">Computed water requirement per zone</h3>
+      <div class="card pad scroll-x">
+        <table id="zoneTable">
+          <thead><tr>
+            <th>Zone</th><th>Planting</th><th class="r">Area</th><th class="r">K<sub>c</sub></th>
+            <th class="r">ET<sub>c</sub></th><th>Current method</th><th class="r">E<sub>a</sub></th>
+            <th class="r">Now</th><th class="r">Proposed</th><th class="r">Saved</th>
+          </tr></thead>
+          <tbody></tbody>
+        </table>
+        <p class="small muted" style="margin-top:12px;margin-bottom:0">
+          ET<sub>c</sub> in mm/day at the design peak. Area in m². E<sub>a</sub> is the effective
+          efficiency (method × watering time × slope). Now / Proposed in m³ per year.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PORTFOLIO ============ -->
+  <section class="view" id="view-portfolio" role="tabpanel" aria-labelledby="tab-portfolio">
+    <div class="view-head">
+      <div class="eyebrow">Hotel Garden Water AI dataset</div>
+      <h2>Portfolio — rank many gardens with the same engine</h2>
+      <p>Load the bundled 12-hotel sample, or pick your own <code>garden_zones.csv</code> (optionally with
+         <code>hotels.csv</code> and <code>irrigation_history.csv</code>) from the dataset. Everything runs in the browser.</p>
+    </div>
+
+    <div class="callout warn" style="margin-bottom:18px">
+      <h4>What this ranking can and cannot tell you</h4>
+      <p style="margin:0">The dataset is <b>synthetic</b> and has no per-city ET₀ or rainfall, so every hotel is scored
+         against the same reference climate: differences reflect plant mix, delivery method, efficiency, sensors and
+         controllers only. Use it to test the engine at scale and to triage, not to claim real savings.
+         See <code>docs/DATASET.md</code>.</p>
+    </div>
+
+    <div class="card pad" style="margin-bottom:18px">
+      <div class="btnrow">
+        <button class="btn" id="btnSample" type="button">Load 12-hotel sample</button>
+        <label class="btn ghost" for="fileCsv" style="cursor:pointer">Choose dataset CSV files…</label>
+        <input class="sr" id="fileCsv" type="file" accept=".csv,text/csv" multiple>
+      </div>
+      <p class="msg" id="portMsg" role="status">No portfolio loaded.</p>
+    </div>
+
+    <div class="grid kpis" id="portKpis" hidden>
+      <div class="card kpi ink"><div class="lab">Hotels</div><div class="val" id="pHotels">—</div><div class="foot" id="pZones">—</div></div>
+      <div class="card kpi clay"><div class="lab">Current use</div><div class="val" id="pBase">—<span class="unit">m³/yr</span></div><div class="foot">reference climate</div></div>
+      <div class="card kpi teal"><div class="lab">After retrofit</div><div class="val" id="pOpt">—<span class="unit">m³/yr</span></div><div class="foot">all measures</div></div>
+      <div class="card kpi moss"><div class="lab">Portfolio saving</div><div class="val" id="pPct">—<span class="unit">%</span></div><div class="foot" id="pSaved">—</div></div>
+    </div>
+
+    <div class="sec" id="portTableWrap" hidden>
+      <h3 class="sec-title">Hotels ranked by modelled saving</h3>
+      <div class="card pad scroll-x">
+        <table class="rank" id="rankTable">
+          <thead><tr>
+            <th>Hotel</th><th>Size</th><th class="r">Zones</th><th class="r">Area m²</th>
+            <th class="r">Now m³/yr</th><th class="r">After m³/yr</th><th class="barcell">Saving</th>
+            <th class="r">Payback</th><th><span class="sr">Open</span></th>
+          </tr></thead>
+          <tbody></tbody>
+        </table>
+        <p class="small muted" style="margin:12px 0 0" id="rankNote"></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ AUDIT ============ -->
+  <section class="view" id="view-audit" role="tabpanel" aria-labelledby="tab-audit">
+    <div class="view-head">
+      <div class="eyebrow">Water audit</div>
+      <h2>Waste points detected</h2>
+      <p>The rule engine checks every zone against nine irrigation-loss conditions. Each finding names
+         the fix and, where the model has a term for it, what that fix would recover <b>on its own</b>.</p>
+    </div>
+
+    <div class="grid kpis" style="grid-template-columns:repeat(3,1fr);margin-bottom:20px">
+      <div class="card kpi clay"><div class="lab">Findings</div><div class="val" id="aTotal">—</div><div class="foot" id="aZones">—</div></div>
+      <div class="card kpi ink"><div class="lab">High severity</div><div class="val" id="aHigh">—</div><div class="foot">fix first</div></div>
+      <div class="card kpi moss"><div class="lab">Recoverable (all measures)</div><div class="val" id="aRec">—<span class="unit">m³/yr</span></div><div class="foot">from the model, not a sum of the cards below</div></div>
+    </div>
+    <p class="small muted" style="margin:-6px 0 14px">Findings overlap — fitting drip also removes the slope loss, for
+      example — so the per-finding figures are stand-alone counterfactuals and do not add up to the total.
+      “Not quantified” means the model has no term for that loss, so none is invented.</p>
+
+    <div class="card" id="findings"></div>
+  </section>
+
+  <!-- ============ SCHEDULE ============ -->
+  <section class="view" id="view-schedule" role="tabpanel" aria-labelledby="tab-schedule">
+    <div class="view-head">
+      <div class="eyebrow">Irrigation plan</div>
+      <h2>Generated peak-season schedule</h2>
+      <p>Runtimes come from each zone's application rate and soil, sized for the design peak ET₀. Cycles are
+         split where the soil cannot absorb water as fast as it is applied. Off-peak, the same zone waters
+         less often; a rain sensor skips cycles after useful rain.</p>
+    </div>
+
+    <div class="card pad" style="margin-bottom:18px">
+      <h3 class="sec-title">Example week at peak demand (no rain)</h3>
+      <div class="scroll-x"><div class="week" id="weekGrid"></div></div>
+      <div class="bar-key" style="margin-top:14px;margin-bottom:0">
+        <span><i class="k-opt"></i>Irrigation cycle (minutes, all cycles)</span>
+        <span><i style="background:var(--line)"></i>No watering — soil above threshold</span>
+      </div>
+    </div>
+
+    <div class="card pad scroll-x">
+      <h3 class="sec-title">Cycle detail</h3>
+      <table id="schedTable">
+        <thead><tr>
+          <th>Zone</th><th>Proposed method</th><th>Start</th><th class="r">Interval</th>
+          <th class="r">Depth</th><th class="r">Rate</th><th class="r">Runtime</th><th>Cycles</th>
+        </tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ============ SIMULATOR ============ -->
+  <section class="view" id="view-sim" role="tabpanel" aria-labelledby="tab-sim">
+    <div class="view-head">
+      <div class="eyebrow">Soil water balance simulation</div>
+      <h2>Controller simulator</h2>
+      <p>Runs the FAO-56 soil water balance one day at a time with <b>generated</b> weather — there is no sensor
+         feed. The comparator is a fixed timer set the way a groundskeeper would set it (from the month's
+         average ET₀, blind to today's weather), so a full-year run agrees with the annual model. It waters every day of the year (the annual model scales to the irrigation season), so compare percentages, not volumes.</p>
+    </div>
+
+    <div class="console" style="margin-bottom:16px">
+      <div class="console-head">
+        <h3>Controller output</h3>
+        <div class="wx">
+          <div>Day<b id="wDay">0</b></div>
+          <div>Max temp<b id="wTemp">—</b></div>
+          <div>ET₀<b id="wET">—</b></div>
+          <div>Rain<b id="wRain">—</b></div>
+          <div>Applied today<b id="wApplied">—</b></div>
+        </div>
+      </div>
+      <div class="log" id="simLog" aria-live="off"></div>
+    </div>
+
+    <div class="ctl" style="margin-bottom:12px">
+      <div class="field"><label for="inStart">Start month</label>
+        <select id="inStart"></select><span class="hint">changing it resets the run</span></div>
+      <div class="btnrow">
+        <button class="btn" id="btnDay" type="button">Advance one day</button>
+        <button class="btn ghost" id="btnWeek" type="button">Run 7 days</button>
+        <button class="btn dark" id="btnMonth" type="button">Run 30 days</button>
+        <button class="btn ghost" id="btnYear" type="button">Run a full year</button>
+        <button class="btn ghost" id="btnSimReset" type="button">Reset to field capacity</button>
+      </div>
+    </div>
+    <p class="sim-note">Weather is generated from a fixed seed, so a run is reproducible. A 30-day run in the
+      monsoon will show a much larger saving than a dry-season run — the annual figure is the average of both.</p>
+
+    <div class="sec">
+      <h3 class="sec-title">Zone moisture</h3>
+      <div class="grid zgrid" id="sensorCards"></div>
+    </div>
+
+    <div class="sec">
+      <h3 class="sec-title">Cumulative water applied — controller vs. fixed timer</h3>
+      <div class="card pad" id="simChart"></div>
+    </div>
+  </section>
+
+  <!-- ============ HARVEST ============ -->
+  <section class="view" id="view-harvest" role="tabpanel" aria-labelledby="tab-harvest">
+    <div class="view-head">
+      <div class="eyebrow">Rain and greywater</div>
+      <h2>Rainwater harvesting and greywater reuse</h2>
+      <p>A month-by-month mass balance with a finite storage tank: how much of the post-retrofit demand the
+         roof and the hotel's own wastewater can cover, and when mains water is still needed.</p>
+    </div>
+
+    <div class="card pad" style="margin-bottom:18px">
+      <div class="ctl">
+        <div class="field"><label for="inRoof">Catchment roof area</label>
+          <input id="inRoof" type="number" min="0" max="50000" step="50"><span class="hint">m²</span></div>
+        <div class="field"><label for="inRooms">Occupied rooms</label>
+          <input id="inRooms" type="number" min="0" max="2000" step="5"><span class="hint">average per night, not total rooms</span></div>
+        <div class="field"><label for="inGrey">Greywater diverted</label>
+          <select id="inGrey">
+            <option value="0.25">25% — showers only</option>
+            <option value="0.4">40% — showers + basins</option>
+            <option value="0.6">60% — plus laundry</option>
+          </select></div>
+        <div class="field"><label for="inTank">Storage tank</label>
+          <input id="inTank" type="number" min="0" max="5000" step="10"><span class="hint">m³</span></div>
+      </div>
+      <p class="small muted" style="margin:12px 0 0">Annual rainfall is set on the Garden Zones tab so the garden's
+        demand and the roof's yield always use the same rain.</p>
+    </div>
+
+    <div class="grid kpis">
+      <div class="card kpi teal"><div class="lab">Roof harvest</div><div class="val" id="hRain">—<span class="unit">m³/yr</span></div><div class="foot">after runoff and first-flush losses</div></div>
+      <div class="card kpi teal"><div class="lab">Usable greywater</div><div class="val" id="hGrey">—<span class="unit">m³/yr</span></div><div class="foot">after treatment losses</div></div>
+      <div class="card kpi moss"><div class="lab">Demand covered</div><div class="val" id="hCover">—<span class="unit">%</span></div><div class="foot" id="hCoverNote">—</div></div>
+      <div class="card kpi ink"><div class="lab">Mains water avoided</div><div class="val" id="hSave">—</div><div class="foot">at the tariff on the Zones tab</div></div>
+    </div>
+
+    <div class="sec">
+      <h3 class="sec-title">Month by month</h3>
+      <div class="card pad" id="harvestChart"></div>
+    </div>
+
+    <div class="sec">
+      <div class="callout" id="harvestNote"></div>
+    </div>
+
+    <div class="sec">
+      <h3 class="sec-title">Coverage against tank size</h3>
+      <div class="card pad scroll-x">
+        <table id="tankTable"><thead><tr><th>Tank</th><th class="r">Demand covered</th><th class="r">Mains still needed</th><th class="r">Overflow wasted</th></tr></thead><tbody></tbody></table>
+        <p class="small muted" style="margin:12px 0 0">Monthly steps flatter small tanks, because refilling and drawing
+          down within a month is not modelled. Treat these as optimistic bounds, and confirm treatment and reuse rules with the local regulator.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ METHOD ============ -->
+  <section class="view" id="view-method" role="tabpanel" aria-labelledby="tab-method">
+    <div class="view-head">
+      <div class="eyebrow">How the numbers are produced</div>
+      <h2>Methodology</h2>
+      <p>The model follows FAO Irrigation &amp; Drainage Paper 56. The structure is standard; the
+         <b>coefficients are textbook values and the baseline behaviour is assumed</b> — see the Assumptions tab.</p>
+    </div>
+
+    <div class="grid" style="grid-template-columns:1fr 1fr;align-items:start">
+      <div class="card pad">
+        <h3 class="sec-title">1 · Crop water requirement</h3>
+        <p class="small muted">Reference evapotranspiration scaled by a landscape coefficient gives each zone's need before losses.</p>
+        <div class="fml"><em>ET</em><sub>c</sub> = ET<sub>0</sub> × K<sub>c</sub></div>
+        <div class="deflist">
+          <div><b>ET₀</b><span>Reference evapotranspiration (mm/day), monthly normals for the reference climate.</span></div>
+          <div><b>Kc</b><span>Landscape coefficient — turf 0.80, beds 0.90, shrubs 0.55, drought-tolerant 0.30. A plant picked from the library carries its own class factor.</span></div>
+          <div><b>Effective rain</b><span>FAO/AGLW dependable rain: 0.6·P − 10 up to 70 mm/month, 0.8·P − 24 above.</span></div>
+        </div>
+      </div>
+
+      <div class="card pad">
+        <h3 class="sec-title">2 · Applied water after losses</h3>
+        <p class="small muted">Plants receive only a fraction of what the system delivers.</p>
+        <div class="fml">Applied = max(0, <em>ET</em><sub>c</sub> − P<sub>eff</sub>) × Area ÷ E<sub>a</sub></div>
+        <div class="deflist">
+          <div><b>Ea</b><span>Method efficiency × watering-time survival × slope loss. Hose 0.55, spray 0.75, drip 0.90.</span></div>
+          <div><b>Fixed timer</b><span>Ignores rain except a manual halving when a month exceeds 150 mm, and over-applies by an assumed 15%.</span></div>
+          <div><b>Season</b><span>Annual need is scaled by season days ÷ 365.</span></div>
+        </div>
+      </div>
+
+      <div class="card pad">
+        <h3 class="sec-title">3 · Soil water balance</h3>
+        <p class="small muted">The simulator runs this each day; irrigation triggers when depletion reaches the allowable limit.</p>
+        <div class="fml">D<sub>today</sub> = D<sub>yesterday</sub> + <em>ET</em><sub>c</sub> − P<sub>eff</sub> − Irrigation</div>
+        <div class="deflist">
+          <div><b>TAW</b><span>Total available water in the root zone (mm) = AWC × root depth.</span></div>
+          <div><b>RAW</b><span>p × TAW. Irrigate when depletion ≥ RAW.</span></div>
+          <div><b>Cycle-and-soak</b><span>Split where application rate exceeds infiltration, and never over three hours per valve.</span></div>
+        </div>
+      </div>
+
+      <div class="card pad">
+        <h3 class="sec-title">4 · Savings, attribution and payback</h3>
+        <p class="small muted">Savings are the modelled difference between current practice and the proposed system.</p>
+        <div class="fml">Payback = CapEx ÷ (ΔWater × Tariff − O&amp;M)</div>
+        <div class="deflist">
+          <div><b>Shapley</b><span>Each measure's saving averaged over all 120 adoption orders, so attribution is order-independent.</span></div>
+          <div><b>O&amp;M</b><span>4% of capex per year (assumption). “Simple payback” without it is also computed.</span></div>
+          <div><b>Range</b><span>400 seeded Monte-Carlo draws over overwatering, current efficiency and Kc give the P10–P90 band.</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sec">
+      <div class="callout">
+        <h4>Why rule-based, not machine learning</h4>
+        <p style="margin:0">Every verdict traces to a published coefficient and a visible arithmetic step, so a reviewer can
+           check any figure by hand. The bundled dataset's labels are themselves a formula of the inputs (see
+           <code>docs/DATASET.md</code>), so a model trained on it would only relearn that formula — it would add opacity
+           without adding information. Measured meter and sensor data from a pilot zone is what would justify ML.</p>
+      </div>
+    </div>
+
+    <div class="sec">
+      <h3 class="sec-title">Coefficients &amp; sources</h3>
+      <div class="card pad scroll-x">
+        <table id="coefTable">
+          <thead><tr><th>Parameter</th><th>Value used</th><th>Basis</th></tr></thead>
+          <tbody></tbody>
+        </table>
+        <p class="small muted" style="margin-top:12px;margin-bottom:0">All coefficients live in the <code>MODEL</code> object in
+          <code>src/engine.js</code>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ASSUMPTIONS ============ -->
+  <section class="view" id="view-limits" role="tabpanel" aria-labelledby="tab-limits">
+    <div class="view-head">
+      <div class="eyebrow">Honest status</div>
+      <h2>Assumptions and limits</h2>
+      <p>What the headline depends on, how well each input is evidenced, and what would replace it with a measurement.</p>
+    </div>
+
+    <div class="sec" style="margin-top:0">
+      <div class="card pad scroll-x">
+        <table>
+          <thead><tr><th>Assumption</th><th>Value</th><th>Evidence today</th><th>Replace with</th></tr></thead>
+          <tbody>
+            <tr><td><b>Current practice</b> — fixed timers over-apply</td><td class="num">×1.15 (range 1.00–1.30)</td><td><span class="tag hi">Assumed</span></td><td>Irrigation sub-meter reading (audit finding)</td></tr>
+            <tr><td><b>Timers keep running in the monsoon</b> at half depth above 150 mm/month</td><td class="num">0.5</td><td><span class="tag hi">Assumed</span></td><td>Grounds team's actual rain-day practice</td></tr>
+            <tr><td>Method efficiencies E<sub>a</sub></td><td class="num">0.45 – 0.90</td><td><span class="tag md">Textbook</span></td><td>Catch-can / distribution-uniformity test per zone</td></tr>
+            <tr><td>Landscape coefficients K<sub>c</sub></td><td class="num">0.30 – 0.90</td><td><span class="tag md">Textbook</span></td><td>Species-validated WUCOLS values for the region</td></tr>
+            <tr><td>ET₀ and rainfall normals</td><td class="num">monthly</td><td><span class="tag md">Reference climate</span></td><td>Nearest weather station, 10-year normals</td></tr>
+            <tr><td>Retrofit cost, O&amp;M, tariff</td><td class="num">₹85–150/m², 4%, ₹42/m³</td><td><span class="tag md">Estimate</span></td><td>Contractor quote and the water bill</td></tr>
+            <tr><td>Greywater and roof yield</td><td class="num">165 L/room, 0.85 / 0.90</td><td><span class="tag md">Estimate</span></td><td>Metered occupancy, roof survey, treatment spec</td></tr>
+            <tr><td>Sensors and weather</td><td class="num">generated</td><td><span class="tag hi">Simulated</span></td><td>Real probes and a weather feed behind <code>stepSim()</code></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="sec">
+      <div class="callout">
+        <h4>What this tool is, and is not</h4>
+        <p>It is a transparent water-budget model that shows where an irrigation system is likely losing water and what each fix is worth,
+           with its uncertainty stated. It is <b>not</b> a measurement: no meter, probe or weather station feeds it, and the current-use figure is
+           a model of assumed practice. The saving becomes a result only when a pilot zone is metered before and after.</p>
+        <p style="margin:0"><b>Known simplifications:</b> annual need is scaled by season length rather than modelled by month; the
+           soil water balance ignores deep percolation and capillary rise; runoff from over-fast application is flagged but not subtracted;
+           harvest runs on monthly steps; greywater reuse needs treatment and regulatory approval that are not costed here.</p>
+      </div>
+    </div>
+
+    <div class="sec">
+      <h3 class="sec-title">Next steps</h3>
+      <div class="card"><div class="track" style="padding:14px">
+        <div class="item"><div class="st wip">1</div><div class="tx"><b>Meter one zone</b><span>Fit an irrigation sub-meter; two weeks of readings replaces the biggest assumption.</span></div></div>
+        <div class="item"><div class="st todo">2</div><div class="tx"><b>Real sensor and weather ingest</b><span>Swap <code>stepSim()</code>'s generator for probe and forecast readings.</span></div></div>
+        <div class="item"><div class="st todo">3</div><div class="tx"><b>Per-city climate</b><span>Attach ET₀ and rainfall normals per city so the Portfolio ranking reflects location.</span></div></div>
+        <div class="item"><div class="st todo">4</div><div class="tx"><b>Calibrate from measurements</b><span>Fit overwatering and efficiency from metered data; learn only where there is data to learn from.</span></div></div>
+      </div></div>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <div>HydroGarden · irrigation water advisor for hotel gardens</div>
+    <div>Rule-based FAO-56 model · runs offline · modelled, not metered</div>
+  </footer>
+</main>
+
+<script src="data/plants.js"></script>
+<script src="data/sample/sample.js"></script>
+<script src="src/engine.js"></script>
+<script src="src/portfolio.js"></script>
+<script src="src/charts.js"></script>
+<script src="src/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+zone_id,hotel_id,zone_type,plant_id,plant_name,plant_count,area_m2,water_need_class,plant_factor,soil_type,soil_moisture_min_pct,soil_moisture_target_pct,irrigation_method,irrigation_efficiency_pct,sun_requirement,mulching,baseline_runtime_min,flow_rate_lpm
+H0137-Z01,H0137,Tree Grove,P103,Aptenia,5,198,Very Low,0.2,Moist rich soil,35,52,Drip,90.0,Full sun,No,60,31.5
+H0137-Z02,H0137,Lawn,P124,Oregano,105,211,Low,0.35,Deep soil,30,50,Drip,90.0,Full sun,Yes,50,32.2
+H0137-Z03,H0137,Ornamental,P030,Indian Cork Tree,282,424,Low,0.35,Acidic rich soil,32,48,Drip,90.0,Full sun,Yes,35,29.6
+H0137-Z04,H0137,Flower Bed,P062,Geranium,1320,330,Low,0.35,Acidic well-drained,24,42,Sprinkler,65.0,Full sun/partial shade,Yes,32,33.6
+H0154-Z01,H0154,Flower Bed,P009,Jamun,1836,459,Low,0.35,Sandy loam,24,42,Micro-irrigation,88.0,Full sun,No,27,12.8
+H0154-Z02,H0154,Ornamental,P032,Orchid Tree,324,486,Low,0.35,Sandy well-drained,18,34,Micro-irrigation,88.0,Full sun,No,32,16.6
+H0154-Z03,H0154,Flower Bed,P022,Bamboo,1360,340,Moderate,0.5,Acidic rich soil,32,48,Micro-irrigation,88.0,Full sun/partial shade,Yes,55,32.7
+H0154-Z04,H0154,Tree Grove,P057,Marigold,8,291,Low,0.35,Sandy well-drained,18,34,Micro-irrigation,88.0,Full sun,No,56,24.2
+H0154-Z05,H0154,Tree Grove,P030,Indian Cork Tree,16,573,Low,0.35,Moist loam,32,50,Micro-irrigation,88.0,Full sun,No,49,6.5
+H0154-Z06,H0154,Shrub Bed,P099,Mondo Grass,245,368,Moderate,0.5,Deep loam,30,50,Micro-irrigation,88.0,Shade/partial shade,No,37,14.9
+H0187-Z01,H0187,Flower Bed,P003,Rain Tree,892,223,Low,0.35,Acidic rich soil,32,48,Flood,50.0,Full sun,No,67,20.7
+H0187-Z02,H0187,Shrub Bed,P100,Alternanthera,180,270,Low,0.35,Loam,28,46,Flood,50.0,Full sun/partial shade,No,62,21.1
+H0187-Z03,H0187,Shrub Bed,P129,Aralia,303,455,Moderate,0.5,Moist rich soil,35,52,Flood,50.0,Bright filtered,No,50,22.3
+H0187-Z04,H0187,Ornamental,P081,Foxtail Palm,194,292,Moderate,0.5,Well-drained,24,44,Sprinkler,65.0,Full sun,No,55,7.0
+H0200-Z01,H0200,Shrub Bed,P013,Rubber Plant,729,1094,Moderate,0.5,Well-drained,24,44,Sprinkler,65.0,Bright/partial shade,No,15,17.7
+H0200-Z02,H0200,Ornamental,P130,Money Tree,1278,1917,Moderate,0.5,Rich well-drained,28,48,Sprinkler,65.0,Bright filtered,Yes,17,7.1
+H0200-Z03,H0200,Ornamental,P021,Teak,812,1219,Low,0.35,Acidic rich soil,32,48,Sprinkler,65.0,Full sun,No,56,28.6
+H0200-Z04,H0200,Tree Grove,P149,Star Jasmine,38,1345,Low,0.35,Moist loam,32,50,Sprinkler,65.0,Full sun/partial shade,Yes,45,6.5
+H0200-Z05,H0200,Lawn,P110,Echeveria,975,1951,Very Low,0.2,Acidic well-drained,24,42,Sprinkler,65.0,Full sun/partial shade,No,35,32.2
+H0200-Z06,H0200,Lawn,P050,Jasmine,629,1259,Moderate,0.5,Sandy loam,24,42,Sprinkler,65.0,Full sun/partial shade,No,45,27.2
+H0200-Z07,H0200,Lawn,P094,Sansevieria,620,1240,Very Low,0.2,Very well-drained,18,36,Micro-irrigation,88.0,Shade/full sun,No,63,10.4
+H0200-Z08,H0200,Lawn,P036,Guava,783,1566,Moderate,0.5,Moist loam,32,50,Sprinkler,65.0,Full sun,Yes,36,29.3
+H0200-Z09,H0200,Lawn,P118,Fescue,975,1951,Moderate,0.5,Moist rich soil,35,52,Sprinkler,65.0,Full sun/partial shade,Yes,30,34.0
+H0488-Z01,H0488,Ornamental,P111,Kalanchoe,544,817,Very Low,0.2,Very well-drained,18,36,Micro-irrigation,88.0,Bright light,Yes,50,7.8
+H0488-Z02,H0488,Lawn,P086,Heliconia,423,846,High,0.65,Clay loam,32,50,Micro-irrigation,88.0,Partial shade,No,61,9.9
+H0488-Z03,H0488,Shrub Bed,P038,Orange,344,517,Moderate,0.5,Rich well-drained,28,48,Micro-irrigation,88.0,Full sun,No,45,20.4
+H0488-Z04,H0488,Tree Grove,P099,Mondo Grass,18,643,Moderate,0.5,Loam,28,46,Flood,50.0,Shade/partial shade,Yes,47,26.0
+H0488-Z05,H0488,Ornamental,P014,Fiddle-leaf Fig,475,713,Moderate,0.5,Well-drained,24,44,Micro-irrigation,88.0,Bright filtered,No,20,26.8
+H0488-Z06,H0488,Flower Bed,P057,Marigold,3068,767,Low,0.35,Loam,28,46,Micro-irrigation,88.0,Full sun,Yes,44,22.7
+H0488-Z07,H0488,Flower Bed,P047,Murraya,3100,775,Moderate,0.5,Very well-drained,18,36,Manual Hose,55.0,Full sun/partial shade,Yes,39,24.6
+H0488-Z08,H0488,Flower Bed,P115,Carpet Grass,2696,674,Moderate,0.5,Deep loam,30,50,Micro-irrigation,88.0,Partial shade/full sun,No,58,10.1
+H0488-Z09,H0488,Lawn,P103,Aptenia,396,792,Very Low,0.2,Sandy well-drained,18,34,Micro-irrigation,88.0,Full sun,Yes,41,33.6
+H0488-Z10,H0488,Lawn,P029,Bottlebrush,366,733,Low,0.35,Sandy loam,24,42,Micro-irrigation,88.0,Full sun,No,15,25.5
+H0488-Z11,H0488,Flower Bed,P146,Boston Fern,2428,607,High,0.65,Deep soil,30,50,Micro-irrigation,88.0,Shade/partial shade,No,45,17.3
+H0488-Z12,H0488,Lawn,P106,Aloe Vera,278,556,Very Low,0.2,Acidic well-drained,24,42,Micro-irrigation,88.0,Full sun/partial shade,Yes,29,31.8
+H0490-Z01,H0490,Flower Bed,P004,Ashoka,720,180,Moderate,0.5,Loam,28,46,Sprinkler,65.0,Partial shade,No,32,22.3
+H0490-Z02,H0490,Lawn,P024,Karanja,149,299,Low,0.35,Very well-drained,18,36,Sprinkler,65.0,Full sun,No,38,6.7
+H0490-Z03,H0490,Shrub Bed,P011,Banyan,129,194,Low,0.35,Acidic rich soil,32,48,Sprinkler,65.0,Full sun,No,70,11.8
+H0490-Z04,H0490,Tree Grove,P086,Heliconia,9,316,High,0.65,Deep loam,30,50,Sprinkler,65.0,Partial shade,No,57,30.9
+H0503-Z01,H0503,Tree Grove,P074,Areca Palm,9,349,Moderate,0.5,Acidic well-drained,24,42,Flood,50.0,Bright filtered,No,37,31.4
+H0503-Z02,H0503,Flower Bed,P048,Lantana,1436,359,Low,0.35,Sandy well-drained,18,34,Micro-irrigation,88.0,Full sun,Yes,36,8.4
+H0503-Z03,H0503,Tree Grove,P001,Neem,9,318,Low,0.35,Very well-drained,18,36,Sprinkler,65.0,Full sun,No,56,18.4
+H0503-Z04,H0503,Lawn,P051,Rangoon Creeper,102,205,Moderate,0.5,Acidic well-drained,24,42,Sprinkler,65.0,Full sun,Yes,72,31.0
+H0503-Z05,H0503,Flower Bed,P142,Calathea,904,226,High,0.65,Moist rich soil,35,52,Fixed Spray,60.0,Shade/partial shade,No,15,30.8
+H0503-Z06,H0503,Flower Bed,P063,Impatiens,1460,365,High,0.65,Rich well-drained,28,48,Sprinkler,65.0,Shade/partial shade,Yes,62,27.0
+H0549-Z01,H0549,Ornamental,P084,Traveler's Palm,1019,1529,High,0.65,Rich well-drained,28,48,Sprinkler,65.0,Moist rich soil,No,70,14.6
+H0549-Z02,H0549,Shrub Bed,P128,Weeping Fig,1980,2970,Moderate,0.5,Acidic well-drained,24,42,Sprinkler,65.0,Full sun/partial shade,No,69,11.7
+H0549-Z03,H0549,Flower Bed,P143,Dracaena marginata,7928,1982,Low,0.35,Very well-drained,18,36,Sprinkler,65.0,Bright filtered,No,64,20.7
+H0549-Z04,H0549,Tree Grove,P080,Fan Palm,64,2253,Low,0.35,Moist loam,32,50,Sprinkler,65.0,Full sun,No,57,15.4
+H0549-Z05,H0549,Shrub Bed,P002,Gulmohar,1791,2687,Low,0.35,Loam,28,46,Sprinkler,65.0,Full sun,No,70,16.6
+H0800-Z01,H0800,Lawn,P079,Royal Palm,175,351,Moderate,0.5,Rich well-drained,28,48,Drip,90.0,Full sun,No,56,13.6
+H0800-Z02,H0800,Lawn,P086,Heliconia,256,513,High,0.65,Deep loam,30,50,Drip,90.0,Partial shade,Yes,75,10.9
+H0800-Z03,H0800,Shrub Bed,P067,Celosia,202,304,Low,0.35,Deep loam,30,50,Drip,90.0,Full sun,Yes,56,20.7
+H0800-Z04,H0800,Lawn,P085,Bird of Paradise,152,305,Moderate,0.5,Sandy well-drained,18,34,Drip,90.0,Full sun/partial shade,Yes,55,29.7
+H0800-Z05,H0800,Ornamental,P001,Neem,337,506,Low,0.35,Moist rich soil,35,52,Drip,90.0,Full sun,No,30,8.3
+H0800-Z06,H0800,Shrub Bed,P111,Kalanchoe,337,506,Very Low,0.2,Very well-drained,18,36,Drip,90.0,Bright light,No,50,27.6
+H0800-Z07,H0800,Shrub Bed,P087,Ti Plant,301,452,Moderate,0.5,Acidic rich soil,32,48,Drip,90.0,Bright filtered,No,36,12.8
+H0800-Z08,H0800,Lawn,P141,Anthurium,263,527,Moderate,0.5,Acidic well-drained,24,42,Drip,90.0,Bright filtered,Yes,29,16.7
+H0800-Z09,H0800,Ornamental,P121,Mint,219,329,High,0.65,Rich well-drained,28,48,Manual Hose,55.0,Partial shade/full sun,Yes,74,9.4
+H0800-Z10,H0800,Ornamental,P030,Indian Cork Tree,325,488,Low,0.35,Acidic well-drained,24,42,Drip,90.0,Full sun,Yes,64,34.9
+H0800-Z11,H0800,Lawn,P052,Allamanda,231,463,Moderate,0.5,Rich well-drained,28,48,Manual Hose,55.0,Full sun,Yes,37,25.7
+H0800-Z12,H0800,Ornamental,P074,Areca Palm,258,387,Moderate,0.5,Moist loam,32,50,Flood,50.0,Bright filtered,Yes,55,13.9
+H0800-Z13,H0800,Ornamental,P030,Indian Cork Tree,460,691,Low,0.35,Rich well-drained,28,48,Drip,90.0,Full sun,Yes,68,22.7
+H0814-Z01,H0814,Shrub Bed,P032,Orchid Tree,44,66,Low,0.35,Moist loam,32,50,Sprinkler,65.0,Full sun,Yes,30,24.3
+H0814-Z02,H0814,Tree Grove,P063,Impatiens,2,93,High,0.65,Moist rich soil,35,52,Flood,50.0,Shade/partial shade,Yes,22,6.8
+H0814-Z03,H0814,Ornamental,P147,Croton Gold Dust,43,65,Moderate,0.5,Deep soil,30,50,Sprinkler,65.0,Bright partial shade,Yes,64,24.3
+H0814-Z04,H0814,Shrub Bed,P102,Purple Heart,85,128,Low,0.35,Well-drained,24,44,Sprinkler,65.0,Full sun/partial shade,Yes,55,22.8
+H0840-Z01,H0840,Flower Bed,P074,Areca Palm,1692,423,Moderate,0.5,Very well-drained,18,36,Flood,50.0,Bright filtered,Yes,33,22.6
+H0840-Z02,H0840,Lawn,P011,Banyan,267,534,Low,0.35,Sandy well-drained,18,34,Micro-irrigation,88.0,Full sun,Yes,50,11.6
+H0840-Z03,H0840,Tree Grove,P075,Lady Palm,18,658,Low,0.35,Deep loam,30,50,Sprinkler,65.0,Shade/partial shade,Yes,20,21.6
+H0840-Z04,H0840,Shrub Bed,P106,Aloe Vera,339,509,Very Low,0.2,Acidic rich soil,32,48,Sprinkler,65.0,Full sun/partial shade,No,17,7.1
+H0840-Z05,H0840,Flower Bed,P138,Hollyhock,3244,811,Moderate,0.5,Acidic well-drained,24,42,Sprinkler,65.0,Full sun,No,16,21.7
+H0841-Z01,H0841,Ornamental,P010,Indian Gooseberry,519,779,Low,0.35,Deep soil,30,50,Drip,90.0,Full sun,Yes,28,35.0
+H0841-Z02,H0841,Lawn,P096,Asystasia,360,720,Moderate,0.5,Very well-drained,18,36,Drip,90.0,Partial shade/full sun,No,17,9.6
+H0841-Z03,H0841,Flower Bed,P077,Date Palm,4660,1165,Low,0.35,Clay loam,32,50,Drip,90.0,Full sun,No,17,25.3
+H0841-Z04,H0841,Shrub Bed,P150,Trumpet Vine,402,603,Low,0.35,Well-drained,24,44,Drip,90.0,Full sun,No,21,10.2
+H0841-Z05,H0841,Shrub Bed,P025,Saptaparni,544,817,Moderate,0.5,Moist loam,32,50,Drip,90.0,Full sun/partial shade,No,54,30.5
+H0841-Z06,H0841,Flower Bed,P147,Croton Gold Dust,4668,1167,Moderate,0.5,Loam,28,46,Drip,90.0,Bright partial shade,Yes,43,9.2
+H0841-Z07,H0841,Flower Bed,P083,Sago Palm,3336,834,Low,0.35,Sandy loam,24,42,Flood,50.0,Full sun/partial shade,No,21,24.7
+H0841-Z08,H0841,Flower Bed,P053,Plumbago,3788,947,Low,0.35,Deep soil,30,50,Drip,90.0,Full sun,No,59,16.3
+H0841-Z09,H0841,Lawn,P102,Purple Heart,570,1141,Low,0.35,Moist rich soil,35,52,Drip,90.0,Full sun/partial shade,Yes,59,26.6
+H0841-Z10,H0841,Flower Bed,P149,Star Jasmine,4288,1072,Low,0.35,Deep soil,30,50,Drip,90.0,Full sun/partial shade,No,19,15.0
+H0841-Z11,H0841,Lawn,P140,Begonia,530,1061,Moderate,0.5,Loam,28,46,Drip,90.0,Partial shade,No,70,14.5
+H0841-Z12,H0841,Tree Grove,P142,Calathea,29,1038,High,0.65,Very well-drained,18,36,Drip,90.0,Shade/partial shade,Yes,30,19.9
+H0841-Z13,H0841,Flower Bed,P096,Asystasia,2960,740,Moderate,0.5,Acidic well-drained,24,42,Drip,90.0,Partial shade/full sun,Yes,37,7.2
+H0841-Z14,H0841,Ornamental,P084,Traveler's Palm,516,775,High,0.65,Moist loam,32,50,Drip,90.0,Moist rich soil,Yes,44,12.5

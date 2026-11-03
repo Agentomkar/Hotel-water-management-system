@@ -1,0 +1,13 @@
+hotel_id,hotel_name,hotel_size,city,state,latitude,longitude,rooms,garden_area_m2,lawn_area_m2,flower_bed_area_m2,tree_shrub_area_m2,garden_zone_count,water_source,rainwater_harvesting,rainwater_storage_l,greywater_reuse,greywater_storage_l,soil_moisture_sensors,weather_controller,primary_irrigation,irrigation_efficiency_pct,daily_garden_water_l,tank_capacity_l,remaining_water_l,manual_or_sensor_mode
+H0137,Delhi Garden Hotel 0137,Small,Delhi,Delhi,28.64328,77.23468,72,1163,255,194,714,4,Municipal,No,0,No,0,Yes,No,Drip,90.0,3874,20000,14113,Sensor
+H0154,Visakhapatnam Garden Hotel 0154,Large,Visakhapatnam,Andhra Pradesh,17.71498,83.19575,209,2517,682,360,1475,6,Borewell,Yes,20000,Yes,30000,Yes,No,Micro-irrigation,88.0,4800,60000,19346,Sensor
+H0187,Goa Garden Hotel 0187,Medium,Goa,Goa,15.30318,74.09481,178,1240,401,109,730,4,Municipal,Yes,20000,Yes,10000,No,Yes,Flood,50.0,5551,60000,48654,Sensor
+H0200,Pune Garden Hotel 0200,Resort,Pune,Maharashtra,18.54646,73.87187,412,13542,3671,1270,8601,9,Rain + Municipal,Yes,30000,Yes,5000,No,No,Sprinkler,65.0,28780,55000,19455,Manual
+H0488,Kochi Garden Hotel 0488,Large,Kochi,Kerala,9.94372,76.23866,195,8440,1755,1012,5673,12,Mixed,Yes,10000,No,0,Yes,No,Micro-irrigation,88.0,20482,20000,9397,Sensor
+H0490,Visakhapatnam Garden Hotel 0490,Small,Visakhapatnam,Andhra Pradesh,17.69628,83.19213,60,989,357,91,541,4,Rain + Municipal,Yes,20000,Yes,20000,Yes,Yes,Sprinkler,65.0,3854,70000,34545,Sensor
+H0503,Jaipur Garden Hotel 0503,Medium,Jaipur,Rajasthan,26.88047,75.78997,159,1822,419,301,1102,6,Mixed,Yes,20000,No,0,No,No,Sprinkler,65.0,6171,30000,13052,Manual
+H0549,Coimbatore Garden Hotel 0549,Resort,Coimbatore,Tamil Nadu,11.01915,76.95388,440,11421,4079,1034,6308,5,Municipal,Yes,10000,No,0,Yes,No,Sprinkler,65.0,27667,30000,13267,Sensor
+H0800,Kolkata Garden Hotel 0800,Large,Kolkata,West Bengal,22.59727,88.33245,270,5822,1252,762,3808,13,Mixed,No,0,Yes,30000,Yes,No,Drip,90.0,14062,60000,35934,Sensor
+H0814,Kochi Garden Hotel 0814,Small,Kochi,Kerala,9.96447,76.24832,53,352,101,48,203,4,Mixed,Yes,75000,No,0,No,No,Sprinkler,65.0,862,105000,59584,Manual
+H0840,Bhubaneswar Garden Hotel 0840,Medium,Bhubaneswar,Odisha,20.30568,85.8639,147,2935,777,274,1884,5,Mixed,Yes,50000,No,0,Yes,No,Sprinkler,65.0,10405,70000,21161,Sensor
+H0841,Kochi Garden Hotel 0841,Resort,Kochi,Kerala,9.93299,76.26396,174,12859,4984,1836,6039,14,Rain + Municipal,Yes,50000,Yes,5000,No,Yes,Drip,90.0,23475,65000,38150,Sensor

@@ -1,0 +1,7 @@
+node_modules/
+dist/
+*.log
+.DS_Store
+# The full synthetic dataset (36 MB) is not committed — see docs/DATASET.md
+/dataset/
+/hotel_garden_water_ai_complete_dataset*/

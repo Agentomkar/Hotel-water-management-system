@@ -1,0 +1,14 @@
+{
+  "name": "hydrogarden",
+  "version": "3.0.0",
+  "description": "Offline FAO-56 irrigation water advisor for hotel gardens, with a portfolio view over the Hotel Garden Water AI dataset",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "test": "node --test tests/*.test.js",
+    "smoke": "node tools/smoke.js",
+    "build": "node tools/build-single.js",
+    "serve": "python3 -m http.server 8000"
+  },
+  "engines": { "node": ">=20" }
+}

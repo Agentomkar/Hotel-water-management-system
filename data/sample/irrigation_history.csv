@@ -1,0 +1,261 @@
+irrigation_id,timestamp,hotel_id,zone_id,irrigation_method,duration_min,flow_rate_lpm,water_applied_l,soil_moisture_before_pct,soil_moisture_after_pct,rainfall_last_24h_mm,runoff_l,overspray_l,leakage_l,scheduled_or_smart,reason
+I00133,2026-05-15 06:00:00,H0488,H0488-Z04,Flood,53,13.7,726.1,44.6,64.6,0,69.6,0,0,Scheduled,Fixed schedule
+I00338,2026-04-16 23:00:00,H0549,H0549-Z02,Sprinkler,15,12.8,192.0,39.7,40.9,2.33,10.9,1.7,0,Smart,Soil moisture trigger
+I00353,2026-05-01 04:00:00,H0503,H0503-Z01,Flood,61,25.9,1579.9,33.2,53.2,0,28.4,0,0,Smart,Soil moisture trigger
+I00362,2026-01-05 08:00:00,H0200,H0200-Z02,Sprinkler,52,7.1,369.2,31.9,35.4,5.62,12.7,17.0,0,Scheduled,Manual override
+I00378,2026-02-09 00:00:00,H0488,H0488-Z06,Micro-irrigation,14,27.5,385.0,41.6,50.6,0,7.5,0,0,Scheduled,Fixed schedule
+I00440,2026-01-20 19:00:00,H0488,H0488-Z12,Micro-irrigation,63,30.9,1946.7,31.3,51.3,1.99,11.7,0,0,Scheduled,Fixed schedule
+I00466,2026-06-11 00:00:00,H0549,H0549-Z02,Sprinkler,34,17.6,598.4,33.5,37.1,0,4.3,20.3,0,Scheduled,Fixed schedule
+I00474,2026-02-08 14:00:00,H0841,H0841-Z12,Drip,49,31.3,1533.7,24.9,44.9,0,4.8,0,20.5,Smart,Soil moisture trigger
+I00756,2026-06-15 11:00:00,H0800,H0800-Z06,Drip,17,15.4,261.8,24.0,33.3,0.6,6.3,0,0,Scheduled,Fixed schedule
+I00773,2026-03-11 23:00:00,H0488,H0488-Z01,Micro-irrigation,66,14.1,930.6,25.5,45.5,0.24,8.3,0,0,Scheduled,Fixed schedule
+I00780,2026-01-07 15:00:00,H0841,H0841-Z09,Drip,23,14.6,335.8,39.8,45.1,0,6.6,0,0,Scheduled,Fixed schedule
+I00811,2026-03-09 01:00:00,H0187,H0187-Z04,Sprinkler,61,17.4,1061.4,32.8,52.8,0,12.7,26.7,8.7,Scheduled,Fixed schedule
+I00908,2026-06-15 17:00:00,H0200,H0200-Z04,Sprinkler,48,24.3,1166.4,51.4,67.0,0,12.4,40.1,0,Scheduled,Fixed schedule
+I00954,2026-02-21 05:00:00,H0800,H0800-Z08,Drip,23,21.4,492.2,41.2,58.1,0,4.6,0,0,Smart,Soil moisture trigger
+I00975,2026-06-19 22:00:00,H0488,H0488-Z07,Manual Hose,61,19.6,1195.6,25.9,45.9,0,7.5,0,0,Scheduled,Fixed schedule
+I00976,2026-04-24 22:00:00,H0137,H0137-Z01,Drip,53,23.0,1219.0,49.8,69.8,0,13.8,0,0,Smart,Soil moisture trigger
+I00994,2026-02-14 06:00:00,H0840,H0840-Z01,Flood,51,21.5,1096.5,29.4,49.4,0.23,114.3,0,0,Smart,Soil moisture trigger
+I01078,2026-02-28 00:00:00,H0800,H0800-Z05,Drip,28,7.3,204.4,51.4,58.7,1.41,2.7,0,0,Scheduled,Fixed schedule
+I01197,2026-06-06 11:00:00,H0840,H0840-Z02,Micro-irrigation,29,26.5,768.5,26.7,46.7,0.84,2.6,0,18.9,Scheduled,Fixed schedule
+I01233,2026-01-20 20:00:00,H0800,H0800-Z05,Drip,19,8.9,169.1,44.6,50.6,1.37,1.7,0,0,Scheduled,Fixed schedule
+I01262,2026-04-11 08:00:00,H0488,H0488-Z04,Flood,42,5.9,247.8,47.0,53.9,2.97,2.6,0,0,Scheduled,Fixed schedule
+I01366,2026-03-18 08:00:00,H0200,H0200-Z04,Sprinkler,59,28.5,1681.5,38.6,58.6,0,90.0,19.5,0,Smart,Soil moisture trigger
+I01373,2026-01-24 18:00:00,H0841,H0841-Z05,Drip,13,18.7,243.1,46.2,51.6,0.3,5.8,0,0,Scheduled,Fixed schedule
+I01401,2026-02-11 00:00:00,H0137,H0137-Z02,Drip,50,26.1,1305.0,39.0,59.0,0.54,20.1,0,0,Scheduled,Fixed schedule
+I01566,2026-03-22 10:00:00,H0488,H0488-Z08,Micro-irrigation,63,31.3,1971.9,54.3,74.3,0,46.0,0,0,Scheduled,Fixed schedule
+I01602,2026-01-18 02:00:00,H0200,H0200-Z05,Sprinkler,29,15.2,440.8,39.0,43.1,0.27,31.3,11.6,2.7,Scheduled,Fixed schedule
+I01615,2026-04-20 12:00:00,H0549,H0549-Z04,Sprinkler,38,25.0,950.0,42.5,50.1,0.67,40.0,18.7,7.1,Scheduled,Fixed schedule
+I01624,2026-05-06 09:00:00,H0154,H0154-Z04,Micro-irrigation,23,15.4,354.2,40.8,60.8,0,2.3,0,0,Smart,Soil moisture trigger
+I01649,2026-01-12 08:00:00,H0549,H0549-Z02,Sprinkler,40,9.2,368.0,36.1,38.3,0,17.4,16.8,0,Smart,Soil moisture trigger
+I01668,2026-04-30 07:00:00,H0841,H0841-Z07,Flood,23,23.3,535.9,49.8,61.4,0.06,15.8,0,0,Scheduled,Fixed schedule
+I01698,2026-06-19 19:00:00,H0137,H0137-Z02,Drip,15,9.1,136.5,26.4,38.1,0,0.9,0,3.3,Smart,Soil moisture trigger
+I01701,2026-03-13 06:00:00,H0154,H0154-Z01,Micro-irrigation,14,7.6,106.4,28.7,32.9,2.39,0.8,0,0,Smart,Soil moisture trigger
+I01722,2026-01-30 04:00:00,H0549,H0549-Z01,Sprinkler,68,6.4,435.2,46.7,51.8,0,14.6,19.9,9.1,Smart,Soil moisture trigger
+I01744,2026-03-21 02:00:00,H0503,H0503-Z02,Micro-irrigation,59,22.1,1303.9,17.3,37.3,0,8.7,0,11.9,Smart,Soil moisture trigger
+I01755,2026-01-30 04:00:00,H0154,H0154-Z05,Micro-irrigation,67,30.2,2023.4,43.7,63.7,0.55,8.0,0,0,Scheduled,Fixed schedule
+I01850,2026-02-06 06:00:00,H0154,H0154-Z01,Micro-irrigation,32,12.4,396.8,36.2,51.8,0.0,11.8,0,0,Scheduled,Fixed schedule
+I01879,2026-06-19 19:00:00,H0154,H0154-Z01,Micro-irrigation,41,9.8,401.8,12.3,28.0,0.48,10.5,0,4.3,Smart,Soil moisture trigger
+I01924,2026-01-24 04:00:00,H0488,H0488-Z11,Micro-irrigation,46,12.4,570.4,32.1,49.0,0.82,10.0,0,0,Smart,Soil moisture trigger
+I02383,2026-03-19 07:00:00,H0154,H0154-Z03,Micro-irrigation,62,24.9,1543.8,52.4,72.4,0,16.2,0,32.0,Scheduled,Fixed schedule
+I02569,2026-02-28 22:00:00,H0800,H0800-Z07,Drip,31,19.0,589.0,40.5,60.5,0,11.1,0,0,Smart,Soil moisture trigger
+I02633,2026-01-18 02:00:00,H0800,H0800-Z12,Flood,18,15.6,280.8,47.2,60.3,4.4,33.8,0,0,Scheduled,Manual override
+I02774,2026-01-05 20:00:00,H0187,H0187-Z04,Sprinkler,59,6.3,371.7,33.3,53.3,0.04,6.1,8.1,0,Smart,Soil moisture trigger
+I02794,2026-04-22 13:00:00,H0488,H0488-Z09,Micro-irrigation,59,6.8,401.2,21.1,30.2,0.61,11.4,0,0,Smart,Soil moisture trigger
+I02872,2026-02-12 14:00:00,H0200,H0200-Z08,Sprinkler,25,9.7,242.5,40.6,43.4,1.37,16.5,14.5,0,Scheduled,Fixed schedule
+I02928,2026-02-21 11:00:00,H0488,H0488-Z05,Micro-irrigation,58,22.5,1305.0,31.0,51.0,1.78,23.5,0,0,Scheduled,Fixed schedule
+I02975,2026-03-25 13:00:00,H0488,H0488-Z05,Micro-irrigation,22,31.4,690.8,31.1,48.5,0.04,10.3,0,0,Scheduled,Fixed schedule
+I03159,2026-05-04 23:00:00,H0841,H0841-Z14,Drip,60,17.5,1050.0,37.8,57.8,0,2.3,0,1.4,Smart,Soil moisture trigger
+I03166,2026-03-23 01:00:00,H0800,H0800-Z10,Drip,31,26.8,830.8,21.3,41.3,0,10.2,0,0,Smart,Soil moisture trigger
+I03289,2026-06-11 04:00:00,H0503,H0503-Z01,Flood,15,12.7,190.5,35.8,45.7,0,17.0,0,0,Smart,Soil moisture trigger
+I03401,2026-04-17 11:00:00,H0800,H0800-Z07,Drip,22,15.1,332.2,52.3,65.6,0,3.2,0,0,Smart,Soil moisture trigger
+I03522,2026-04-09 12:00:00,H0814,H0814-Z02,Flood,24,11.4,273.6,34.8,54.8,0,29.4,0,0,Scheduled,Fixed schedule
+I03527,2026-01-03 21:00:00,H0187,H0187-Z03,Flood,45,27.3,1228.5,45.3,65.3,1.42,64.7,0,0,Scheduled,Fixed schedule
+I03586,2026-01-24 22:00:00,H0549,H0549-Z02,Sprinkler,54,30.9,1668.6,36.2,46.3,1.09,19.2,39.9,0,Smart,Soil moisture trigger
+I03648,2026-02-27 05:00:00,H0137,H0137-Z02,Drip,55,23.5,1292.5,51.2,71.2,0,30.9,0,0,Smart,Soil moisture trigger
+I03656,2026-01-23 20:00:00,H0549,H0549-Z02,Sprinkler,38,10.8,410.4,44.2,46.7,0,28.9,19.3,0,Scheduled,Fixed schedule
+I03692,2026-04-27 22:00:00,H0503,H0503-Z03,Sprinkler,40,14.1,564.0,27.3,47.3,4.0,1.0,42.5,5.8,Scheduled,Manual override
+I03710,2026-05-05 23:00:00,H0841,H0841-Z01,Drip,52,25.3,1315.6,55.6,75.6,0.43,24.6,0,0,Scheduled,Fixed schedule
+I03739,2026-02-16 11:00:00,H0503,H0503-Z03,Sprinkler,48,24.8,1190.4,42.9,62.9,0,12.8,35.5,0,Smart,Soil moisture trigger
+I03863,2026-06-02 10:00:00,H0490,H0490-Z02,Sprinkler,39,22.4,873.6,24.6,44.6,2.06,65.1,51.5,0,Scheduled,Fixed schedule
+I04200,2026-04-10 00:00:00,H0841,H0841-Z10,Drip,48,28.6,1372.8,51.0,71.0,0.8,8.4,0,0,Scheduled,Fixed schedule
+I04244,2026-03-12 21:00:00,H0503,H0503-Z03,Sprinkler,27,29.8,804.6,24.4,44.4,1.08,67.0,8.6,0,Scheduled,Fixed schedule
+I04372,2026-04-15 07:00:00,H0154,H0154-Z05,Micro-irrigation,32,30.6,979.2,50.8,70.8,0.14,8.7,0,0,Smart,Soil moisture trigger
+I04562,2026-02-28 01:00:00,H0840,H0840-Z04,Sprinkler,17,21.3,362.1,43.0,55.8,0,28.3,23.3,0,Smart,Soil moisture trigger
+I04596,2026-03-05 06:00:00,H0549,H0549-Z03,Sprinkler,20,13.1,262.0,20.8,23.2,0,12.2,8.3,0,Smart,Soil moisture trigger
+I04674,2026-06-26 03:00:00,H0800,H0800-Z10,Drip,39,17.0,663.0,38.2,58.2,0.18,14.5,0,16.7,Smart,Soil moisture trigger
+I04708,2026-03-31 12:00:00,H0488,H0488-Z01,Micro-irrigation,54,10.6,572.4,20.6,33.2,0,15.7,0,0,Scheduled,Fixed schedule
+I04826,2026-04-17 08:00:00,H0800,H0800-Z13,Drip,68,27.9,1897.2,38.9,58.9,1.36,2.9,0,52.9,Scheduled,Fixed schedule
+I04869,2026-05-30 13:00:00,H0549,H0549-Z04,Sprinkler,16,23.4,374.4,40.5,43.5,0.49,28.7,14.6,0,Scheduled,Fixed schedule
+I04884,2026-04-20 06:00:00,H0549,H0549-Z05,Sprinkler,66,6.9,455.4,26.6,29.6,0,33.0,10.8,0.2,Scheduled,Fixed schedule
+I04896,2026-05-26 01:00:00,H0488,H0488-Z06,Micro-irrigation,62,24.0,1488.0,48.0,68.0,0.96,22.0,0,0,Smart,Soil moisture trigger
+I05004,2026-05-01 01:00:00,H0814,H0814-Z01,Sprinkler,42,6.7,281.4,36.8,56.8,0.69,17.5,4.9,0,Scheduled,Fixed schedule
+I05084,2026-06-27 22:00:00,H0840,H0840-Z05,Sprinkler,18,19.3,347.4,32.1,39.8,0,8.3,18.8,0,Scheduled,Fixed schedule
+I05125,2026-04-26 23:00:00,H0200,H0200-Z08,Sprinkler,68,22.1,1502.8,52.0,69.3,0.8,19.7,111.5,0,Smart,Soil moisture trigger
+I05254,2026-05-09 21:00:00,H0841,H0841-Z05,Drip,44,20.2,888.8,46.5,66.1,0.03,6.8,0,0,Scheduled,Fixed schedule
+I05281,2026-04-10 21:00:00,H0800,H0800-Z11,Manual Hose,20,9.7,194.0,36.8,44.3,2.0,10.8,0,0,Smart,Soil moisture trigger
+I05401,2026-03-04 10:00:00,H0137,H0137-Z02,Drip,16,9.5,152.0,30.0,42.9,0.1,0.5,0,0,Scheduled,Fixed schedule
+I05496,2026-01-31 13:00:00,H0800,H0800-Z09,Manual Hose,16,26.8,428.8,48.1,68.1,0,42.8,0,0,Scheduled,Fixed schedule
+I05619,2026-01-18 08:00:00,H0200,H0200-Z04,Sprinkler,45,5.6,252.0,48.2,51.6,0,16.3,5.4,0,Smart,Soil moisture trigger
+I05768,2026-04-28 13:00:00,H0488,H0488-Z03,Micro-irrigation,10,24.4,244.0,40.9,49.4,0,6.9,0,0,Smart,Soil moisture trigger
+I05782,2026-06-15 03:00:00,H0154,H0154-Z04,Micro-irrigation,18,20.2,363.6,38.7,58.7,0,1.2,0,0,Scheduled,Fixed schedule
+I05820,2026-02-28 09:00:00,H0154,H0154-Z04,Micro-irrigation,26,20.9,543.4,21.2,41.2,0.63,15.5,0,0,Scheduled,Fixed schedule
+I05880,2026-04-17 10:00:00,H0800,H0800-Z09,Manual Hose,17,31.9,542.3,41.4,61.4,0.19,35.6,0,0,Smart,Soil moisture trigger
+I06151,2026-04-12 16:00:00,H0840,H0840-Z03,Sprinkler,56,19.1,1069.6,43.2,63.2,0,36.7,70.3,4.0,Scheduled,Fixed schedule
+I06163,2026-03-12 14:00:00,H0814,H0814-Z03,Sprinkler,23,5.2,119.6,49.6,69.6,1.09,7.4,9.2,0,Scheduled,Fixed schedule
+I06385,2026-03-29 05:00:00,H0503,H0503-Z02,Micro-irrigation,51,10.6,540.6,20.9,40.9,2.82,8.5,0,0,Smart,Soil moisture trigger
+I06387,2026-02-05 00:00:00,H0154,H0154-Z02,Micro-irrigation,66,8.1,534.6,25.3,45.1,1.18,9.1,0,0,Scheduled,Fixed schedule
+I06409,2026-06-03 11:00:00,H0841,H0841-Z09,Drip,31,20.6,638.6,43.5,53.6,0.61,4.3,0,15.5,Scheduled,Fixed schedule
+I06419,2026-06-02 10:00:00,H0841,H0841-Z12,Drip,64,14.1,902.4,29.9,45.5,5.35,6.0,0,0,Scheduled,Manual override
+I06480,2026-04-05 09:00:00,H0154,H0154-Z01,Micro-irrigation,13,24.2,314.6,40.2,52.6,2.02,3.1,0,0,Scheduled,Fixed schedule
+I06552,2026-05-07 22:00:00,H0800,H0800-Z09,Manual Hose,45,26.4,1188.0,42.0,62.0,0.6,88.0,0,0,Scheduled,Fixed schedule
+I06616,2026-06-14 17:00:00,H0200,H0200-Z01,Sprinkler,46,28.1,1292.6,18.7,38.7,0,68.2,59.5,0,Scheduled,Fixed schedule
+I06687,2026-03-26 22:00:00,H0800,H0800-Z06,Drip,56,17.2,963.2,20.2,40.2,5.52,12.9,0,0,Scheduled,Manual override
+I06810,2026-02-03 12:00:00,H0814,H0814-Z03,Sprinkler,69,11.8,814.2,34.7,54.7,0,24.8,30.9,0,Scheduled,Fixed schedule
+I06817,2026-05-13 23:00:00,H0800,H0800-Z13,Drip,26,25.5,663.0,46.6,63.9,0,9.6,0,0,Scheduled,Fixed schedule
+I06857,2026-04-25 22:00:00,H0490,H0490-Z03,Sprinkler,15,8.8,132.0,51.0,63.3,0.15,8.0,9.3,0,Scheduled,Fixed schedule
+I06879,2026-06-02 09:00:00,H0488,H0488-Z06,Micro-irrigation,34,19.1,649.4,49.6,64.8,0,13.2,0,0,Scheduled,Fixed schedule
+I06909,2026-05-03 11:00:00,H0841,H0841-Z14,Drip,10,15.1,151.0,37.2,40.7,0.51,0.3,0,0,Scheduled,Fixed schedule
+I06980,2026-02-03 06:00:00,H0490,H0490-Z04,Sprinkler,44,13.6,598.4,48.4,68.4,1.29,31.8,7.6,0,Smart,Soil moisture trigger
+I06995,2026-02-26 15:00:00,H0800,H0800-Z03,Drip,10,22.2,222.0,29.1,42.2,0,3.2,0,0,Scheduled,Fixed schedule
+I07043,2026-01-09 18:00:00,H0841,H0841-Z13,Drip,13,18.2,236.6,37.5,43.3,2.95,0.0,0,0,Smart,Soil moisture trigger
+I07248,2026-04-11 21:00:00,H0503,H0503-Z01,Flood,22,24.2,532.4,44.5,64.5,0,55.2,0,0,Smart,Soil moisture trigger
+I07378,2026-04-03 01:00:00,H0841,H0841-Z08,Drip,22,15.8,347.6,45.0,51.6,1.55,5.4,0,0,Smart,Soil moisture trigger
+I07414,2026-04-22 00:00:00,H0800,H0800-Z07,Drip,67,29.8,1996.6,46.1,66.1,0,11.0,0,26.2,Smart,Soil moisture trigger
+I07608,2026-01-27 00:00:00,H0154,H0154-Z02,Micro-irrigation,40,11.7,468.0,20.5,37.8,0.72,12.2,0,0,Scheduled,Fixed schedule
+I07722,2026-01-10 18:00:00,H0549,H0549-Z02,Sprinkler,44,19.6,862.4,39.3,44.5,2.88,35.5,55.2,0,Smart,Soil moisture trigger
+I07908,2026-01-31 00:00:00,H0137,H0137-Z01,Drip,20,30.5,610.0,37.1,57.1,2.01,8.3,0,0,Smart,Soil moisture trigger
+I07966,2026-04-06 13:00:00,H0840,H0840-Z04,Sprinkler,46,15.4,708.4,46.7,66.7,0.93,27.0,27.6,0,Smart,Soil moisture trigger
+I07997,2026-06-02 15:00:00,H0154,H0154-Z05,Micro-irrigation,61,19.8,1207.8,44.8,64.8,0.46,6.1,0,0,Scheduled,Fixed schedule
+I08026,2026-02-09 11:00:00,H0488,H0488-Z02,Micro-irrigation,22,6.0,132.0,43.9,46.7,2.26,3.7,0,0,Smart,Soil moisture trigger
+I08033,2026-06-18 20:00:00,H0488,H0488-Z06,Micro-irrigation,56,19.9,1114.4,28.7,48.7,3.66,32.7,0,0,Scheduled,Manual override
+I08057,2026-05-28 21:00:00,H0154,H0154-Z01,Micro-irrigation,19,26.8,509.2,25.6,45.5,5.54,2.0,0,0,Scheduled,Manual override
+I08098,2026-03-18 12:00:00,H0800,H0800-Z13,Drip,12,19.4,232.8,34.5,40.5,0,5.2,0,0,Scheduled,Fixed schedule
+I08381,2026-01-09 22:00:00,H0800,H0800-Z10,Drip,42,19.8,831.6,35.7,55.7,0,17.8,0,0,Scheduled,Fixed schedule
+I08447,2026-06-16 01:00:00,H0200,H0200-Z03,Sprinkler,24,7.0,168.0,42.9,45.4,0,14.1,2.7,0,Smart,Soil moisture trigger
+I08543,2026-06-20 19:00:00,H0800,H0800-Z11,Manual Hose,17,29.2,496.4,27.4,46.7,1.89,10.9,0,0,Smart,Soil moisture trigger
+I08586,2026-01-19 14:00:00,H0841,H0841-Z03,Drip,48,9.2,441.6,42.4,49.2,0,7.6,0,0,Smart,Soil moisture trigger
+I08771,2026-05-09 10:00:00,H0841,H0841-Z02,Drip,54,11.0,594.0,23.2,38.1,1.42,11.7,0,0,Scheduled,Fixed schedule
+I08807,2026-02-19 19:00:00,H0503,H0503-Z01,Flood,32,29.3,937.6,38.9,58.9,0,72.3,0,0,Smart,Soil moisture trigger
+I08908,2026-05-09 23:00:00,H0200,H0200-Z07,Micro-irrigation,44,30.0,1320.0,27.4,46.5,1.37,26.7,0,0,Scheduled,Fixed schedule
+I09028,2026-04-16 17:00:00,H0488,H0488-Z02,Micro-irrigation,60,21.4,1284.0,39.7,59.7,0,26.0,0,0,Scheduled,Fixed schedule
+I09077,2026-06-14 11:00:00,H0200,H0200-Z09,Sprinkler,18,9.4,169.2,39.7,41.2,0,9.0,8.4,0,Scheduled,Fixed schedule
+I09081,2026-06-03 04:00:00,H0841,H0841-Z02,Drip,37,20.0,740.0,29.0,47.5,0.67,1.3,0,0,Scheduled,Fixed schedule
+I09083,2026-02-15 19:00:00,H0800,H0800-Z09,Manual Hose,60,27.6,1656.0,43.8,63.8,0,42.2,0,0,Smart,Soil moisture trigger
+I09234,2026-03-29 04:00:00,H0488,H0488-Z10,Micro-irrigation,10,16.0,160.0,35.0,38.9,0.14,3.0,0,0,Scheduled,Fixed schedule
+I09290,2026-05-05 10:00:00,H0154,H0154-Z01,Micro-irrigation,23,28.3,650.9,31.1,51.1,0,4.0,0,0,Scheduled,Fixed schedule
+I09347,2026-03-05 09:00:00,H0490,H0490-Z01,Sprinkler,16,10.3,164.8,42.2,58.7,7.68,5.9,2.8,2.1,Scheduled,Manual override
+I09348,2026-03-02 14:00:00,H0137,H0137-Z03,Drip,69,7.5,517.5,40.5,60.5,1.18,12.9,0,0,Smart,Soil moisture trigger
+I09580,2026-01-18 10:00:00,H0154,H0154-Z04,Micro-irrigation,22,16.3,358.6,23.9,43.9,0,3.1,0,0.5,Scheduled,Fixed schedule
+I09693,2026-06-28 11:00:00,H0488,H0488-Z10,Micro-irrigation,51,13.7,698.7,39.0,56.1,1.39,11.3,0,5.8,Smart,Soil moisture trigger
+I09694,2026-04-08 15:00:00,H0840,H0840-Z01,Flood,46,12.3,565.8,32.5,52.5,0,55.8,0,0,Smart,Soil moisture trigger
+I09757,2026-06-02 20:00:00,H0187,H0187-Z01,Flood,33,16.3,537.9,44.7,64.7,6.44,26.4,0,0,Scheduled,Manual override
+I09801,2026-05-17 08:00:00,H0549,H0549-Z03,Sprinkler,70,28.2,1974.0,23.5,41.5,0.9,32.3,149.4,0,Scheduled,Fixed schedule
+I10036,2026-05-12 12:00:00,H0200,H0200-Z05,Sprinkler,24,10.2,244.8,26.7,28.9,1.29,12.4,18.4,0,Smart,Soil moisture trigger
+I10107,2026-04-23 14:00:00,H0187,H0187-Z02,Flood,53,12.4,657.2,30.5,50.5,0,76.6,0,0,Scheduled,Fixed schedule
+I10272,2026-03-13 14:00:00,H0503,H0503-Z02,Micro-irrigation,60,25.7,1542.0,32.8,52.8,0.27,32.7,0,31.3,Scheduled,Fixed schedule
+I10381,2026-05-26 19:00:00,H0200,H0200-Z01,Sprinkler,38,15.1,573.8,28.0,37.5,0.78,21.3,0.4,0,Scheduled,Fixed schedule
+I10492,2026-06-16 14:00:00,H0800,H0800-Z05,Drip,51,6.5,331.5,38.8,50.6,4.54,3.6,0,0,Scheduled,Manual override
+I10683,2026-01-21 04:00:00,H0549,H0549-Z01,Sprinkler,64,25.8,1651.2,45.3,64.8,0.18,132.4,75.3,0,Smart,Soil moisture trigger
+I10773,2026-05-16 05:00:00,H0488,H0488-Z06,Micro-irrigation,67,13.1,877.7,37.7,57.7,0,11.0,0,0,Scheduled,Fixed schedule
+I10778,2026-04-30 16:00:00,H0154,H0154-Z03,Micro-irrigation,51,15.5,790.5,43.3,63.3,4.23,20.1,0,0,Smart,Soil moisture trigger
+I10902,2026-02-12 03:00:00,H0800,H0800-Z08,Drip,32,19.8,633.6,35.6,55.6,1.11,5.1,0,0,Smart,Soil moisture trigger
+I11112,2026-04-10 04:00:00,H0503,H0503-Z04,Sprinkler,33,24.1,795.3,40.9,60.9,3.74,2.4,19.5,0,Scheduled,Manual override
+I11435,2026-01-23 07:00:00,H0503,H0503-Z04,Sprinkler,27,10.5,283.5,47.6,67.6,0,11.3,4.6,0,Smart,Soil moisture trigger
+I11484,2026-01-26 05:00:00,H0200,H0200-Z04,Sprinkler,45,16.5,742.5,42.7,52.6,0,50.0,18.8,0,Smart,Soil moisture trigger
+I11485,2026-02-23 15:00:00,H0200,H0200-Z04,Sprinkler,52,5.3,275.6,35.7,39.4,1.92,11.5,11.7,0,Smart,Soil moisture trigger
+I11513,2026-06-18 11:00:00,H0549,H0549-Z05,Sprinkler,22,29.8,655.6,33.0,37.4,2.59,5.8,49.1,0,Smart,Soil moisture trigger
+I11544,2026-02-22 15:00:00,H0800,H0800-Z08,Drip,31,25.8,799.8,37.5,57.5,0,5.4,0,0,Smart,Soil moisture trigger
+I11612,2026-01-24 08:00:00,H0503,H0503-Z01,Flood,41,30.5,1250.5,37.9,57.9,0.94,124.5,0,0,Scheduled,Fixed schedule
+I11765,2026-03-19 07:00:00,H0488,H0488-Z02,Micro-irrigation,15,26.3,394.5,47.3,55.7,0,5.0,0,0,Scheduled,Fixed schedule
+I11856,2026-02-26 17:00:00,H0840,H0840-Z04,Sprinkler,44,28.7,1262.8,47.2,67.2,0.64,13.2,67.2,0,Scheduled,Fixed schedule
+I11914,2026-01-18 04:00:00,H0488,H0488-Z12,Micro-irrigation,25,28.5,712.5,34.7,54.7,4.67,18.0,0,20.0,Scheduled,Manual override
+I11977,2026-05-27 10:00:00,H0549,H0549-Z04,Sprinkler,58,9.7,562.6,32.9,37.4,0,14.0,40.1,0,Scheduled,Fixed schedule
+I11980,2026-03-17 06:00:00,H0841,H0841-Z04,Drip,54,28.6,1544.4,47.2,67.2,2.65,20.6,0,0,Scheduled,Fixed schedule
+I12094,2026-02-07 09:00:00,H0841,H0841-Z11,Drip,40,6.4,256.0,37.7,42.0,1.0,0.5,0,6.5,Scheduled,Fixed schedule
+I12186,2026-02-03 03:00:00,H0841,H0841-Z03,Drip,30,8.0,240.0,42.6,46.3,1.51,0.3,0,0,Scheduled,Fixed schedule
+I12190,2026-03-17 16:00:00,H0841,H0841-Z03,Drip,55,14.2,781.0,30.8,42.9,0,3.6,0,0,Scheduled,Fixed schedule
+I12199,2026-03-17 20:00:00,H0503,H0503-Z03,Sprinkler,61,17.6,1073.6,17.3,37.3,1.07,45.2,1.6,0,Smart,Soil moisture trigger
+I12337,2026-03-01 10:00:00,H0187,H0187-Z01,Flood,32,13.6,435.2,34.7,54.7,0.28,16.6,0,0,Smart,Soil moisture trigger
+I12377,2026-04-13 13:00:00,H0841,H0841-Z07,Flood,12,11.0,132.0,32.3,35.1,0.69,14.8,0,0,Scheduled,Fixed schedule
+I12383,2026-05-08 21:00:00,H0488,H0488-Z05,Micro-irrigation,66,5.1,336.6,26.1,34.6,0.53,3.7,0,0,Scheduled,Fixed schedule
+I12485,2026-05-23 03:00:00,H0841,H0841-Z06,Drip,62,10.3,638.6,43.7,53.5,0,0.2,0,7.5,Scheduled,Fixed schedule
+I12531,2026-05-27 03:00:00,H0503,H0503-Z06,Sprinkler,55,11.9,654.5,33.7,53.7,0.56,5.4,14.9,4.1,Scheduled,Fixed schedule
+I12549,2026-04-07 04:00:00,H0490,H0490-Z03,Sprinkler,40,9.7,388.0,46.0,66.0,0.45,3.9,15.6,0,Scheduled,Fixed schedule
+I12713,2026-05-28 03:00:00,H0549,H0549-Z03,Sprinkler,70,8.4,588.0,20.0,25.3,2.32,26.6,15.0,0,Scheduled,Fixed schedule
+I12718,2026-02-07 04:00:00,H0841,H0841-Z06,Drip,38,22.3,847.4,29.9,43.0,0,9.8,0,0,Smart,Soil moisture trigger
+I12719,2026-03-03 10:00:00,H0137,H0137-Z04,Sprinkler,59,19.3,1138.7,27.4,47.4,1.84,19.1,33.3,0,Scheduled,Fixed schedule
+I12732,2026-05-03 09:00:00,H0841,H0841-Z13,Drip,28,7.2,201.6,37.4,42.4,0,4.8,0,0,Smart,Soil moisture trigger
+I12739,2026-04-29 20:00:00,H0187,H0187-Z04,Sprinkler,36,10.4,374.4,24.3,44.3,2.05,5.8,16.4,0,Scheduled,Fixed schedule
+I12895,2026-04-01 16:00:00,H0200,H0200-Z08,Sprinkler,34,17.0,578.0,40.2,46.9,2.26,37.7,35.6,0,Smart,Soil moisture trigger
+I12978,2026-04-15 13:00:00,H0490,H0490-Z01,Sprinkler,62,8.6,533.2,29.9,49.9,0.71,25.5,1.4,0,Scheduled,Fixed schedule
+I13008,2026-01-24 22:00:00,H0490,H0490-Z04,Sprinkler,14,8.0,112.0,36.2,42.5,0,7.0,7.7,0,Smart,Soil moisture trigger
+I13134,2026-06-17 17:00:00,H0841,H0841-Z07,Flood,30,16.1,483.0,27.8,38.2,0,6.8,0,0,Scheduled,Fixed schedule
+I13176,2026-02-09 02:00:00,H0814,H0814-Z02,Flood,65,24.8,1612.0,41.2,61.2,0.13,47.5,0,0,Scheduled,Fixed schedule
+I13241,2026-04-07 10:00:00,H0488,H0488-Z10,Micro-irrigation,60,25.0,1500.0,31.1,51.1,0,25.1,0,0,Scheduled,Fixed schedule
+I13354,2026-06-16 00:00:00,H0841,H0841-Z04,Drip,27,21.4,577.8,22.8,40.1,0,9.4,0,6.8,Scheduled,Fixed schedule
+I13385,2026-04-17 04:00:00,H0488,H0488-Z10,Micro-irrigation,37,10.6,392.2,47.9,57.5,0,2.8,0,0,Scheduled,Fixed schedule
+I13411,2026-05-10 21:00:00,H0840,H0840-Z02,Micro-irrigation,36,14.7,529.2,42.6,60.4,0,13.9,0,0,Smart,Soil moisture trigger
+I13565,2026-06-29 22:00:00,H0200,H0200-Z02,Sprinkler,29,24.5,710.5,47.2,53.9,0,20.3,26.5,6.0,Scheduled,Fixed schedule
+I13579,2026-02-15 15:00:00,H0800,H0800-Z11,Manual Hose,14,24.8,347.2,38.8,52.3,0.96,1.9,0,0,Smart,Soil moisture trigger
+I13647,2026-05-05 13:00:00,H0503,H0503-Z04,Sprinkler,44,30.5,1342.0,30.3,50.3,0.4,52.0,86.5,0,Scheduled,Fixed schedule
+I13710,2026-03-21 14:00:00,H0814,H0814-Z04,Sprinkler,31,30.3,939.3,37.8,57.8,0.43,31.1,18.1,0,Scheduled,Fixed schedule
+I13717,2026-04-19 20:00:00,H0840,H0840-Z02,Micro-irrigation,36,22.4,806.4,32.0,52.0,0.25,20.8,0,0,Smart,Soil moisture trigger
+I13720,2026-03-19 07:00:00,H0200,H0200-Z01,Sprinkler,54,28.1,1517.4,41.6,61.6,3.08,76.4,90.8,0,Scheduled,Manual override
+I13721,2026-01-30 11:00:00,H0840,H0840-Z02,Micro-irrigation,37,11.5,425.5,22.0,36.4,0,6.3,0,0,Scheduled,Fixed schedule
+I13792,2026-01-25 01:00:00,H0800,H0800-Z02,Drip,60,28.2,1692.0,37.0,57.0,1.99,27.3,0,0,Scheduled,Fixed schedule
+I13821,2026-01-10 02:00:00,H0154,H0154-Z01,Micro-irrigation,65,19.7,1280.5,40.6,60.6,0,25.9,0,0,Scheduled,Fixed schedule
+I13830,2026-06-11 07:00:00,H0137,H0137-Z03,Drip,30,25.5,765.0,39.8,59.8,0,2.9,0,0,Scheduled,Fixed schedule
+I14203,2026-01-14 08:00:00,H0841,H0841-Z05,Drip,38,21.3,809.4,21.4,39.2,0.39,13.0,0,0,Scheduled,Fixed schedule
+I14363,2026-05-11 10:00:00,H0490,H0490-Z01,Sprinkler,10,23.2,232.0,21.7,41.7,2.26,7.9,16.1,0,Scheduled,Fixed schedule
+I14415,2026-05-04 23:00:00,H0840,H0840-Z03,Sprinkler,26,11.8,306.8,41.3,49.7,0,0.1,16.7,0,Scheduled,Fixed schedule
+I14609,2026-02-20 03:00:00,H0137,H0137-Z02,Drip,43,5.9,253.7,60.3,80.3,0,4.1,0,0,Smart,Soil moisture trigger
+I14636,2026-01-25 07:00:00,H0490,H0490-Z02,Sprinkler,28,17.3,484.4,22.6,42.6,0.03,17.4,26.8,0,Scheduled,Fixed schedule
+I14752,2026-03-14 08:00:00,H0814,H0814-Z04,Sprinkler,43,32.0,1376.0,35.7,55.7,1.64,81.0,82.7,0,Scheduled,Fixed schedule
+I14753,2026-01-18 08:00:00,H0800,H0800-Z07,Drip,66,11.8,778.8,39.4,59.4,3.59,17.2,0,0,Scheduled,Manual override
+I14762,2026-05-19 06:00:00,H0800,H0800-Z06,Drip,36,29.4,1058.4,28.1,48.1,0,1.6,0,0,Smart,Soil moisture trigger
+I14827,2026-05-30 09:00:00,H0800,H0800-Z02,Drip,17,12.3,209.1,53.7,61.0,0,3.6,0,0,Scheduled,Fixed schedule
+I14971,2026-06-27 08:00:00,H0488,H0488-Z11,Micro-irrigation,16,20.5,328.0,34.6,44.3,1.68,2.0,0,3.7,Scheduled,Fixed schedule
+I15052,2026-04-20 21:00:00,H0841,H0841-Z04,Drip,21,21.5,451.5,31.7,45.2,0,6.9,0,7.6,Smart,Soil moisture trigger
+I15121,2026-06-30 06:00:00,H0200,H0200-Z01,Sprinkler,65,11.6,754.0,24.2,36.6,0.63,22.3,28.3,1.1,Scheduled,Fixed schedule
+I15234,2026-06-27 23:00:00,H0800,H0800-Z09,Manual Hose,33,26.5,874.5,39.4,59.4,3.33,28.1,0,0,Smart,Soil moisture trigger
+I15290,2026-05-27 05:00:00,H0814,H0814-Z02,Flood,32,17.6,563.2,48.0,68.0,0,8.6,0,12.2,Scheduled,Fixed schedule
+I15332,2026-01-29 11:00:00,H0200,H0200-Z05,Sprinkler,13,14.3,185.9,29.0,30.7,1.19,1.9,4.1,0,Scheduled,Fixed schedule
+I15344,2026-01-13 18:00:00,H0490,H0490-Z01,Sprinkler,46,27.7,1274.2,34.7,54.7,0,110.0,70.2,0,Scheduled,Fixed schedule
+I15399,2026-06-13 21:00:00,H0503,H0503-Z01,Flood,68,14.2,965.6,28.1,48.1,2.28,3.9,0,0,Scheduled,Fixed schedule
+I15402,2026-05-05 03:00:00,H0490,H0490-Z01,Sprinkler,47,28.9,1358.3,38.5,58.5,2.45,62.6,20.7,0,Smart,Soil moisture trigger
+I15412,2026-05-06 22:00:00,H0841,H0841-Z03,Drip,64,11.8,755.2,41.2,52.9,0.63,11.1,0,0,Scheduled,Fixed schedule
+I15444,2026-02-20 22:00:00,H0200,H0200-Z02,Sprinkler,45,31.6,1422.0,29.7,43.0,0.38,62.7,103.1,0,Smart,Soil moisture trigger
+I15451,2026-02-23 17:00:00,H0800,H0800-Z05,Drip,55,20.9,1149.5,51.5,71.5,0,19.0,0,0,Smart,Soil moisture trigger
+I15469,2026-05-05 16:00:00,H0200,H0200-Z06,Sprinkler,49,18.8,921.2,43.3,56.5,0,22.0,0.6,11.5,Scheduled,Fixed schedule
+I15552,2026-05-23 16:00:00,H0840,H0840-Z02,Micro-irrigation,16,31.7,507.2,27.7,44.8,0,12.4,0,0,Scheduled,Fixed schedule
+I15559,2026-06-12 17:00:00,H0841,H0841-Z06,Drip,14,20.7,289.8,31.1,35.6,1.25,1.8,0,0,Smart,Soil moisture trigger
+I15710,2026-04-30 12:00:00,H0488,H0488-Z11,Micro-irrigation,43,10.2,438.6,43.6,56.6,4.08,4.4,0,6.0,Smart,Soil moisture trigger
+I15764,2026-05-28 01:00:00,H0200,H0200-Z09,Sprinkler,62,15.2,942.4,44.8,53.5,1.13,37.1,53.6,0,Scheduled,Fixed schedule
+I15809,2026-05-20 07:00:00,H0137,H0137-Z01,Drip,42,16.4,688.8,55.1,75.1,4.06,6.1,0,0,Scheduled,Manual override
+I15886,2026-01-18 12:00:00,H0840,H0840-Z05,Sprinkler,46,18.9,869.4,31.2,50.5,0,69.1,54.9,0,Smart,Soil moisture trigger
+I16096,2026-06-14 10:00:00,H0800,H0800-Z04,Drip,53,20.0,1060.0,23.0,43.0,0,20.7,0,0,Scheduled,Fixed schedule
+I16192,2026-04-10 00:00:00,H0841,H0841-Z08,Drip,35,26.0,910.0,58.2,75.5,0,11.0,0,0,Scheduled,Fixed schedule
+I16197,2026-04-19 04:00:00,H0840,H0840-Z01,Flood,43,15.2,653.6,33.7,53.7,1.93,40.2,0,0,Smart,Soil moisture trigger
+I16216,2026-05-18 13:00:00,H0549,H0549-Z03,Sprinkler,11,13.3,146.3,32.4,33.7,0,1.0,1.7,4.1,Smart,Soil moisture trigger
+I16326,2026-04-11 12:00:00,H0137,H0137-Z04,Sprinkler,17,16.8,285.6,41.3,56.8,0,13.9,13.6,0,Scheduled,Fixed schedule
+I16390,2026-04-27 04:00:00,H0841,H0841-Z01,Drip,64,27.9,1785.6,24.9,44.9,0,17.2,0,0,Scheduled,Fixed schedule
+I16506,2026-01-04 17:00:00,H0549,H0549-Z01,Sprinkler,26,14.8,384.8,40.6,45.1,0,22.2,8.0,0,Scheduled,Fixed schedule
+I16546,2026-06-25 20:00:00,H0800,H0800-Z12,Flood,48,16.9,811.2,35.5,55.5,6.45,36.6,0,0,Scheduled,Manual override
+I16551,2026-06-05 06:00:00,H0800,H0800-Z11,Manual Hose,53,11.8,625.4,43.6,63.6,2.24,32.2,0,0,Smart,Soil moisture trigger
+I16803,2026-05-02 16:00:00,H0841,H0841-Z07,Flood,56,20.4,1142.4,28.2,48.2,0,122.2,0,0,Smart,Soil moisture trigger
+I17290,2026-06-23 22:00:00,H0549,H0549-Z01,Sprinkler,46,21.6,993.6,31.5,43.2,0.22,14.7,67.4,0,Scheduled,Fixed schedule
+I17364,2026-01-18 01:00:00,H0490,H0490-Z01,Sprinkler,60,31.9,1914.0,33.5,53.5,1.86,5.5,108.0,0,Smart,Soil moisture trigger
+I17553,2026-02-21 10:00:00,H0154,H0154-Z01,Micro-irrigation,22,23.0,506.0,29.4,49.3,2.58,15.1,0,0,Smart,Soil moisture trigger
+I17681,2026-03-18 08:00:00,H0154,H0154-Z04,Micro-irrigation,61,18.2,1110.2,26.9,46.9,0.59,11.6,0,16.1,Smart,Soil moisture trigger
+I17799,2026-06-11 19:00:00,H0488,H0488-Z01,Micro-irrigation,18,24.3,437.4,22.2,31.9,2.98,8.7,0,0,Scheduled,Fixed schedule
+I17884,2026-05-22 02:00:00,H0800,H0800-Z07,Drip,45,30.6,1377.0,39.3,59.3,0,33.9,0,0,Smart,Soil moisture trigger
+I18006,2026-05-18 09:00:00,H0800,H0800-Z09,Manual Hose,55,24.3,1336.5,45.7,65.7,0,47.5,0,0,Smart,Soil moisture trigger
+I18014,2026-02-10 11:00:00,H0800,H0800-Z07,Drip,64,13.3,851.2,44.7,64.7,0.49,15.4,0,0,Scheduled,Fixed schedule
+I18048,2026-01-19 19:00:00,H0488,H0488-Z07,Manual Hose,68,6.1,414.8,10.6,20.3,0,31.1,0,0.7,Scheduled,Fixed schedule
+I18063,2026-05-21 18:00:00,H0200,H0200-Z05,Sprinkler,49,26.9,1318.1,23.5,35.7,0,38.9,96.9,0,Scheduled,Fixed schedule
+I18071,2026-01-29 09:00:00,H0800,H0800-Z06,Drip,57,26.0,1482.0,22.1,42.1,1.94,14.3,0,0,Scheduled,Fixed schedule
+I18088,2026-06-01 16:00:00,H0154,H0154-Z01,Micro-irrigation,38,22.8,866.4,34.4,54.4,0,15.7,0,0,Scheduled,Fixed schedule
+I18126,2026-05-09 12:00:00,H0137,H0137-Z01,Drip,63,15.0,945.0,27.9,47.9,0.12,22.3,0,0,Scheduled,Fixed schedule
+I18274,2026-04-09 01:00:00,H0800,H0800-Z05,Drip,14,19.5,273.0,47.6,57.4,0.5,0.2,0,0,Scheduled,Fixed schedule
+I18334,2026-06-10 07:00:00,H0503,H0503-Z02,Micro-irrigation,53,13.7,726.1,26.4,46.4,2.63,16.8,0,0,Scheduled,Fixed schedule
+I18530,2026-06-29 16:00:00,H0154,H0154-Z04,Micro-irrigation,36,31.7,1141.2,40.2,60.2,0,30.9,0,0,Scheduled,Fixed schedule
+I18571,2026-04-22 06:00:00,H0187,H0187-Z03,Flood,28,21.7,607.6,37.6,57.6,5.34,8.9,0,0,Scheduled,Manual override
+I18697,2026-06-15 07:00:00,H0841,H0841-Z06,Drip,42,30.5,1281.0,45.2,65.0,0,8.9,0,0,Scheduled,Fixed schedule
+I19096,2026-02-18 13:00:00,H0549,H0549-Z05,Sprinkler,18,15.1,271.8,49.1,50.9,1.31,15.0,14.2,0,Scheduled,Fixed schedule
+I19159,2026-04-01 21:00:00,H0488,H0488-Z01,Micro-irrigation,65,24.3,1579.5,33.3,53.3,0.88,27.7,0,0,Scheduled,Fixed schedule
+I19191,2026-01-04 08:00:00,H0488,H0488-Z07,Manual Hose,58,8.9,516.2,29.2,41.2,0.24,26.1,0,0,Smart,Soil moisture trigger
+I19341,2026-04-12 11:00:00,H0840,H0840-Z01,Flood,64,30.6,1958.4,32.8,52.8,0.09,37.5,0,0,Scheduled,Fixed schedule
+I19343,2026-01-19 06:00:00,H0137,H0137-Z04,Sprinkler,53,21.1,1118.3,27.0,47.0,0,68.9,22.6,0,Scheduled,Fixed schedule
+I19447,2026-02-24 14:00:00,H0488,H0488-Z12,Micro-irrigation,40,28.0,1120.0,36.2,56.2,3.16,15.1,0,0,Scheduled,Manual override
+I19563,2026-03-13 05:00:00,H0503,H0503-Z04,Sprinkler,37,22.8,843.6,33.4,53.4,0.53,29.6,36.5,0,Scheduled,Fixed schedule
+I19594,2026-05-19 03:00:00,H0840,H0840-Z04,Sprinkler,53,8.8,466.4,44.1,60.6,6.87,12.4,25.1,0,Smart,Soil moisture trigger
+I19636,2026-06-17 08:00:00,H0814,H0814-Z01,Sprinkler,10,27.6,276.0,35.2,55.2,0,3.4,5.7,0,Smart,Soil moisture trigger
+I19686,2026-04-21 15:00:00,H0200,H0200-Z03,Sprinkler,42,8.9,373.8,46.1,51.6,0.36,28.7,15.3,0,Scheduled,Fixed schedule
+I19731,2026-04-08 00:00:00,H0841,H0841-Z08,Drip,65,17.4,1131.0,42.2,62.2,0,11.3,0,0,Scheduled,Fixed schedule
+I19754,2026-05-01 11:00:00,H0200,H0200-Z05,Sprinkler,40,15.1,604.0,30.1,35.7,0,6.2,5.6,0,Scheduled,Fixed schedule
+I19790,2026-02-07 07:00:00,H0200,H0200-Z05,Sprinkler,69,15.1,1041.9,34.7,44.3,0.51,84.9,23.5,0,Smart,Soil moisture trigger
+I19853,2026-02-10 00:00:00,H0841,H0841-Z12,Drip,70,30.4,2128.0,36.1,56.1,0.12,15.8,0,0,Scheduled,Fixed schedule
+I19892,2026-01-09 23:00:00,H0841,H0841-Z01,Drip,67,24.6,1648.2,43.9,63.9,0.13,32.0,0,10.1,Scheduled,Fixed schedule
+I19963,2026-04-28 15:00:00,H0814,H0814-Z04,Sprinkler,49,6.6,323.4,28.6,48.6,0.27,24.1,1.7,0,Scheduled,Fixed schedule
+I19980,2026-06-28 18:00:00,H0841,H0841-Z10,Drip,14,5.4,75.6,40.0,41.3,1.55,0.7,0,0,Scheduled,Fixed schedule
