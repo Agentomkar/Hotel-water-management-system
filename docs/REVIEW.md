@@ -34,3 +34,6 @@ Every item was checked against the code, not assumed. Severity: **A** misleads a
 ## C. Packaging
 
 `package.json` declared a `bin` (`cli.js`) and `types` (`hydrogarden.d.ts`) that did not exist, unused `jest`/`typescript` devDependencies, and `yourusername` placeholders. CI used `cache: npm` with no lockfile, `upload-artifact@v3` (retired), and a "NaN in `console.log`" grep that tested nothing. The README promised a `.pptx` that was not shipped. `ENHANCEMENTS.md` was a self-assessment ("Maximum", "-5% to 8% smaller") with no content. All removed or corrected.
+
+## Note on v3 landing page
+The landing design was kept (per the design brief) but with real content: no invented logos or customer counts, live engine numbers, and videos/fonts as optional enhancements (see README). The smoke test fails if a page shows any of the old invented claims.

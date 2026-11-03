@@ -66,7 +66,7 @@ function readInputs() {
 
 /* ----------------------------------------------------------------- views */
 const VIEWS = ["dash", "zones", "portfolio", "audit", "schedule", "sim", "harvest", "method", "limits"];
-function switchView(name, focusTab) {
+function switchView(name, focusTab, opts) {
   if (VIEWS.indexOf(name) < 0) name = "dash";
   $$(".tab").forEach((t) => {
     const on = t.dataset.view === name;
@@ -75,7 +75,8 @@ function switchView(name, focusTab) {
   });
   $$(".view").forEach((v) => v.classList.toggle("on", v.id === "view-" + name));
   try { history.replaceState(null, "", "#" + name); } catch (e) { /* file:// in some browsers */ }
-  window.scrollTo(0, 0);
+  const app = document.getElementById("app");
+  if (app && opts && opts.scroll !== false) window.scrollTo(0, app.offsetTop);
 }
 function tabKeys(e) {
   const i = VIEWS.indexOf(e.target.dataset.view); if (i < 0) return;
@@ -336,7 +337,7 @@ function openHotel(id) {
   const h = PORT && PORT.hotels.find((x) => x.id === id); if (!h) return;
   const site = P.siteFor(h, { tariff: CFG.tariff, rainfall: CFG.rainfall, peakET0: CFG.peakET0, season: CFG.season, nativeShare: CFG.nativeShare, greyShare: CFG.greyShare, tank: CFG.tank });
   setSite(site.zones, site.cfg, (h.name || h.id) + (h.city ? " · " + h.city : "") + " (dataset)");
-  switchView("dash");
+  switchView("dash", false, { scroll: true });
 }
 
 /* ----------------------------------------------------------------- audit */
@@ -477,7 +478,7 @@ function boot() {
   restore();
   syncInputs(); renderEditor(); renderCoefs(); resetSim(); renderAll(); renderPortfolio();
 
-  $$(".tab").forEach((t) => { t.addEventListener("click", () => switchView(t.dataset.view)); t.addEventListener("keydown", tabKeys); });
+  $$(".tab").forEach((t) => { t.addEventListener("click", () => switchView(t.dataset.view, false, { scroll: true })); t.addEventListener("keydown", tabKeys); });
   Object.keys(CFG_INPUTS).forEach((k) => { $(CFG_INPUTS[k]).addEventListener("input", () => { renderAll(); save(); }); });
   $("#inStart").addEventListener("change", () => { resetSim(); });
   $("#editor").addEventListener("change", onEdit);
@@ -495,7 +496,8 @@ function boot() {
   $("#btnYear").addEventListener("click", () => run(365));
   $("#btnSimReset").addEventListener("click", resetSim);
 
-  const h = (location.hash || "").slice(1); if (h && VIEWS.indexOf(h) >= 0) switchView(h);
+  window.HGApp = { openView: (v) => switchView(v, false, { scroll: true }) };
+  const h = (location.hash || "").slice(1); if (h && VIEWS.indexOf(h) >= 0) switchView(h, false, { scroll: true });
 }
 
 try { document.readyState === "loading" ? document.addEventListener("DOMContentLoaded", boot) : boot(); }

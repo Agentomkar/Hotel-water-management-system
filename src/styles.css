@@ -52,7 +52,7 @@ a{color:var(--teal)}
   background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.22);
   display:flex;align-items:center;justify-content:center;
 }
-.brand h1{font-size:23px;color:#fff;line-height:1.1}
+.brand .title{font-family:var(--serif);font-weight:700;letter-spacing:-.01em;font-size:23px;color:#fff;line-height:1.1}
 .brand .sub{font-size:12.5px;color:#A9CFD2;letter-spacing:.02em;margin-top:2px}
 .mast-meta{text-align:right;font-size:12px;color:#A9CFD2;line-height:1.7}
 .mast-meta b{color:#fff;font-weight:600}

@@ -30,6 +30,9 @@ docs/       REVIEW.md (what v2.1 got wrong)  DATASET.md (can the data be used?) 
 ```
 `src/engine.js` is pure (no DOM) and runs in Node or the browser; every function takes the `site` it works on.
 
+## Landing page
+Hero + Capabilities follow the "liquid glass" design brief (Instrument Serif / Barlow, blur-in headline, fading background video), built in plain CSS/JS so the app stays dependency-free. Fonts and the two background videos are **optional enhancements** loaded from Google Fonts and the CDN URLs in `index.html`; offline, the gradients and system fonts take over and nothing breaks. For a fully offline deployment, download the videos into `assets/` and point the `data-src` attributes there. The brief's invented logos and stats were replaced: the hero numbers are computed by the engine and the "trust" row lists real references.
+
 ## Honest limits
 Baseline overwatering, current efficiencies and Kc are textbook or assumed values; sensors and weather are simulated; annual need is scaled by season length; harvest uses monthly steps. See the Assumptions tab and `docs/REVIEW.md`.
 

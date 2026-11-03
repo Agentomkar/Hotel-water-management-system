@@ -13,9 +13,10 @@ const check = (ok, label, extra) => { if (!ok) failures++; console.log((ok ? "  
   const browser = await chromium.launch();
   const page = await browser.newPage({ viewport: { width: 1280, height: 900 } });
   const errors = [], external = [];
-  page.on("console", (m) => { if (m.type() === "error") errors.push(m.text()); });
+  const OPTIONAL = /^https:\/\/(fonts\.googleapis\.com|fonts\.gstatic\.com|d8j0ntlcm91z4\.cloudfront\.net)\//;
+page.on("console", (m) => { if (m.type() === "error" && !/Failed to load resource/.test(m.text())) errors.push(m.text()); });
   page.on("pageerror", (e) => errors.push("PAGEERROR " + e.message));
-  page.on("request", (r) => { if (!/^(file|data|blob):/.test(r.url())) external.push(r.url()); });
+  page.on("request", (r) => { if (!/^(file|data|blob):/.test(r.url()) && !OPTIONAL.test(r.url())) external.push(r.url()); });
   await page.goto(url);
   const shot = async (n) => { if (shotsDir) await page.screenshot({ path: path.join(shotsDir, n + ".png"), fullPage: true }); };
   const txt = (sel) => page.locator(sel).first().innerText();
@@ -25,6 +26,21 @@ const check = (ok, label, extra) => { if (!ok) failures++; console.log((ok ? "  
   check(/6[0-9]/.test(await txt("#kPct")), "dashboard headline renders a ~6x% saving", (await txt("#kPct")).replace(/\n/g, " "));
   check(!/NaN|undefined|Infinity/.test(await page.locator("main").innerText()), "no NaN/undefined/Infinity in visible text");
   await shot("01-dashboard");
+
+  console.log("\n== landing");
+  check(await page.locator("#hero h1").isVisible(), "hero headline visible on first screen");
+  check(/^\d+%$/.test((await txt("#heroPct")).trim()), "hero saving comes from the engine", await txt("#heroPct"));
+  check((await page.locator("#capabilities .card3").count()) === 3, "three capability cards");
+  check(!(await page.locator("#landing").innerText()).match(/Aeon|Vela|Zeno|140\+|Trusted by/), "no invented logos or stats");
+  await shot("00-hero");
+  await page.click("[data-go='audit']");
+  check(await page.locator("#view-audit").isVisible() && (await page.evaluate(() => scrollY)) > 500, "capability card opens the Audit tab and scrolls to the app");
+  await page.evaluate(() => scrollTo(0, 0)); await page.waitForTimeout(400);
+  check(await page.evaluate(() => !document.getElementById("lnav").classList.contains("away")), "nav visible on landing");
+  await page.click("#tab-dash");
+  await page.waitForTimeout(500);
+  check(await page.evaluate(() => document.getElementById("lnav").classList.contains("away")), "nav hides once inside the app");
+  await shot("00b-capabilities");
 
   console.log("\n== every tab");
   for (const v of ["zones", "portfolio", "audit", "schedule", "sim", "harvest", "method", "limits", "dash"]) {
@@ -96,7 +112,7 @@ const check = (ok, label, extra) => { if (!ok) failures++; console.log((ok ? "  
   await shot("mobile-dashboard");
 
   console.log("\n== hygiene");
-  check(external.length === 0, "zero external network requests", external.slice(0, 3).join(", "));
+  check(external.length === 0, "no network requests beyond optional fonts/videos", external.slice(0, 3).join(", "));
   check(errors.length === 0, "no console/page errors", errors.slice(0, 3).join(" | "));
   await browser.close();
   console.log(failures ? `\n${failures} SMOKE CHECK(S) FAILED` : "\nSMOKE TEST PASSED");
